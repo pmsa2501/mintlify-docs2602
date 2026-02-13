@@ -11,33 +11,6 @@
   "navigation": {
     "products": [
       {
-        "product": "GUIDES Via360",
-        "tabs": [
-          {
-            "tab": "Auth",
-            "dropdowns": [
-              {
-                "dropdown": "Menu AUTH",
-                "pages": [
-                  "TESTauth"
-                ]
-              }
-            ]
-          },
-          {
-            "tab": "Modules TOS RNDC",
-            "dropdowns": [
-              {
-                "dropdown": "Menu CAMIONES"
-              }
-            ]
-          },
-          {
-            "tab": "Modules TOC CRM"
-          }
-        ]
-      },
-      {
         "product": "GUIDES General",
         "global": {
           "anchors": [
@@ -96,6 +69,33 @@
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "product": "GUIDES Via360",
+        "tabs": [
+          {
+            "tab": "👤 Auth",
+            "dropdowns": [
+              {
+                "dropdown": "Menu AUTH",
+                "pages": [
+                  "TESTauth"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "🚛 TOS RNDC",
+            "dropdowns": [
+              {
+                "dropdown": "Menu CAMIONES"
+              }
+            ]
+          },
+          {
+            "tab": "📇 Modules TOC CRM"
           }
         ]
       }
