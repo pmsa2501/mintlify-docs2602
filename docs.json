@@ -68,28 +68,15 @@
                         "groups": [
                           {
                             "group": "Getting started",
-                            "pages": [
-                              "index",
-                              "quickstart",
-                              "development"
-                            ]
+                            "pages": []
                           },
                           {
                             "group": "Writing content",
-                            "pages": [
-                              "essentials/markdown",
-                              "essentials/code",
-                              "essentials/images",
-                              "essentials/reusable-snippets"
-                            ]
+                            "pages": []
                           },
                           {
                             "group": "AI tools",
-                            "pages": [
-                              "ai-tools/cursor",
-                              "ai-tools/claude-code",
-                              "ai-tools/windsurf"
-                            ]
+                            "pages": []
                           }
                         ]
                       },
@@ -98,92 +85,16 @@
                         "groups": [
                           {
                             "group": "API documentation",
-                            "pages": [
-                              "api-reference/introduction"
-                            ]
+                            "pages": []
                           },
                           {
                             "group": "Endpoint examples",
-                            "pages": [
-                              "api-reference/endpoint/get",
-                              "api-reference/endpoint/create",
-                              "api-reference/endpoint/delete",
-                              "api-reference/endpoint/webhook"
-                            ]
+                            "pages": []
                           }
                         ]
                       },
                       {
                         "tab": "TESTTab"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "language": "es",
-            "anchors": [
-              {
-                "anchor": "TESTAnchor",
-                "dropdowns": [
-                  {
-                    "dropdown": "TESTDropdown2",
-                    "tabs": [
-                      {
-                        "tab": "Guides",
-                        "groups": [
-                          {
-                            "group": "Getting started",
-                            "pages": [
-                              "index",
-                              "quickstart",
-                              "development"
-                            ]
-                          },
-                          {
-                            "group": "Customization",
-                            "pages": []
-                          },
-                          {
-                            "group": "Writing content",
-                            "pages": [
-                              "essentials/markdown",
-                              "essentials/code",
-                              "essentials/images",
-                              "essentials/reusable-snippets"
-                            ]
-                          },
-                          {
-                            "group": "AI tools",
-                            "pages": [
-                              "ai-tools/cursor",
-                              "ai-tools/claude-code",
-                              "ai-tools/windsurf"
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "tab": "API reference",
-                        "groups": [
-                          {
-                            "group": "API documentation",
-                            "pages": [
-                              "api-reference/introduction"
-                            ]
-                          },
-                          {
-                            "group": "Endpoint examples",
-                            "pages": [
-                              "api-reference/endpoint/get",
-                              "api-reference/endpoint/create",
-                              "api-reference/endpoint/delete",
-                              "api-reference/endpoint/webhook"
-                            ]
-                          }
-                        ]
                       }
                     ]
                   }
