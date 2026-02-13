@@ -14,7 +14,7 @@
         "product": "GUIDES Via360",
         "tabs": [
           {
-            "tab": "👤 Auth",
+            "tab": "Auth",
             "pages": [
               "FeatureOverview",
               "TESTAuth-copied-1",
@@ -22,7 +22,7 @@
             ]
           },
           {
-            "tab": "🚛 TOS RNDC",
+            "tab": "TOS RNDC",
             "dropdowns": [
               {
                 "dropdown": "TOS RNDC",
@@ -41,7 +41,7 @@
             ]
           },
           {
-            "tab": "📇 Modules TOC CRM"
+            "tab": "TOC CRM"
           }
         ]
       },
