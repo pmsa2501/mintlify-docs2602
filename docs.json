@@ -53,50 +53,45 @@
             }
           ]
         },
-        "languages": [
+        "anchors": [
           {
-            "language": "es",
-            "anchors": [
+            "anchor": "TESTAnchor",
+            "dropdowns": [
               {
-                "anchor": "TESTAnchor",
-                "dropdowns": [
+                "dropdown": "TESTDropdown",
+                "tabs": [
                   {
-                    "dropdown": "TESTDropdown",
-                    "tabs": [
+                    "tab": "Guides",
+                    "groups": [
                       {
-                        "tab": "Guides",
-                        "groups": [
-                          {
-                            "group": "Getting started",
-                            "pages": []
-                          },
-                          {
-                            "group": "Writing content",
-                            "pages": []
-                          },
-                          {
-                            "group": "AI tools",
-                            "pages": []
-                          }
-                        ]
+                        "group": "Getting started",
+                        "pages": []
                       },
                       {
-                        "tab": "API reference",
-                        "groups": [
-                          {
-                            "group": "API documentation",
-                            "pages": []
-                          },
-                          {
-                            "group": "Endpoint examples",
-                            "pages": []
-                          }
-                        ]
+                        "group": "Writing content",
+                        "pages": []
                       },
                       {
-                        "tab": "TESTTab"
+                        "group": "AI tools",
+                        "pages": []
                       }
                     ]
+                  },
+                  {
+                    "tab": "API reference",
+                    "groups": [
+                      {
+                        "group": "API documentation",
+                        "pages": []
+                      },
+                      {
+                        "group": "Endpoint examples",
+                        "pages": []
+                      }
+                    ]
+                  },
+                  {
+                    "tab": "TESTTab"
                   }
                 ]
               }
