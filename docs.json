@@ -9,28 +9,23 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "icon": "book-open-cover",
-          "href": "https://mintlify.com/docs"
-        },
-        {
-          "anchor": "Blog",
-          "icon": "newspaper",
-          "href": "https://mintlify.com/blog"
-        }
-      ]
-    },
     "products": [
       {
         "product": "TEST2 Product",
-        "versions": [
-          {
-            "version": "TESTVersion"
-          }
-        ]
+        "global": {
+          "anchors": [
+            {
+              "anchor": "Introduction",
+              "icon": "book-open-cover",
+              "href": "https://mintlify.com/docs"
+            },
+            {
+              "anchor": "Blog (updates)",
+              "icon": "newspaper",
+              "href": "https://mintlify.com/blog"
+            }
+          ]
+        }
       },
       {
         "product": "TESTProduct",
