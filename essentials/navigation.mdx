@@ -1,87 +1,188 @@
 ---
-title: 'Navigation'
-description: 'The navigation field in docs.json defines the pages that go in the navigation menu'
-icon: 'map'
+title: "Authentication & Login: User Guide"
 ---
 
-The navigation menu is the list of links on every website.
+---
 
-You will likely update `docs.json` every time you add a new page. Pages do not show up automatically.
+# Part 1: Feature Overview
 
-## Navigation syntax
+### What is Authentication?
 
-Our navigation syntax is recursive which means you can make nested navigation groups. You don't need to include `.mdx` in page names.
+Authentication is how you securely sign in to MAM360. The system verifies your identity before allowing access to truck management features. You can log in using your Google account or an email code.
 
-<CodeGroup>
+### Understanding Your Role
 
-```json Regular Navigation
-"navigation": {
-  "tabs": [
-    {
-      "tab": "Docs",
-      "groups": [
-        {
-          "group": "Getting Started",
-          "pages": ["quickstart"]
-        }
-      ]
-    }
-  ]
-}
-```
+MAM360 has three user roles that determine what you can do:
 
-```json Nested Navigation
-"navigation": {
-  "tabs": [
-    {
-      "tab": "Docs",
-      "groups": [
-        {
-          "group": "Getting Started",
-          "pages": [
-            "quickstart",
-            {
-              "group": "Nested Reference Pages",
-              "pages": ["nested-reference-page"]
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
-```
+#### Administrator
 
-</CodeGroup>
+- Full access to all features
+- Can manage trucks at all stages
+- Can modify any truck status
 
-## Folders
+#### Operator
 
-Simply put your MDX files in folders and update the paths in `docs.json`.
+- Full access to all features
+- Same permissions as Administrator
+- Typically port staff who manage daily operations
 
-For example, to have a page at `https://yoursite.com/your-folder/your-page` you would make a folder called `your-folder` containing an MDX file called `your-page.mdx`.
+#### Client
 
-<Warning>
+- Can view your company's trucks
+- Can create new truck entries (Estado 0-1)
+- Cannot use PRC operations
+- Cannot modify trucks after they enter the queue (Estado 2+)
 
-You cannot use `api` for the name of a folder unless you nest it inside another folder. Mintlify uses Next.js which reserves the top-level `api` folder for internal server calls. A folder name such as `api-reference` would be accepted.
+Your role is assigned by the system administrator.
 
-</Warning>
+---
 
-```json Navigation With Folder
-"navigation": {
-  "tabs": [
-    {
-      "tab": "Docs",
-      "groups": [
-        {
-          "group": "Group Name",
-          "pages": ["your-folder/your-page"]
-        }
-      ]
-    }
-  ]
-}
-```
+# Part 2: Step-by-Step Usage
 
-## Hidden pages
+### How to Log In
 
-MDX files not included in `docs.json` will not show up in the sidebar but are accessible through the search bar and by linking directly to them.
+#### Option 1: Google Sign-In (Recommended)
+
+##### Step 1: Go to the Login Page
+
+<Frame>
+  ![2026 02 12 003885](/images/2026-02-12-003885-1.png)
+</Frame>
+
+<Frame>
+  ![2026 02 12 003885](/images/2026-02-12-003885.png)
+</Frame>
+
+Open MAM360 in your browser. If you're not already logged in, you'll see the login page. You can use the back arrow (←) in the top-left corner to return to the main page at any time.
+
+##### Step 2: Click "Sign in with Google"
+
+Click the "Ingresar con Google" button. This will open a Google sign-in window.
+
+##### Step 3: Select Your Google Account
+
+Choose the Google account you want to use for MAM360. If you're already signed into Google, this may happen automatically.
+
+##### Step 4: Complete Setup (First Time Only)
+
+If this is your first time, you'll go through a quick setup process:
+
+1. Enter your phone number
+2. Verify with a code sent to your phone
+3. Enter your name and ID number
+4. Choose notification preferences
+
+After setup, you'll go directly to the dashboard on future logins.
+
+#### Option 2: Email Code Sign-In
+
+##### Step 1: Go to the Login Page
+
+Open MAM360 and click "Continue with email" (Continuar con correo).
+
+##### Step 2: Enter Your Email
+
+Type your email address and click "Continue" (Continuar).
+
+##### Step 3: Check Your Email
+
+Open your email inbox and look for a message from MAM360 with a 6-digit code.
+
+##### Step 4: Enter the Code
+
+Type the 6-digit code on the verification page and click "Verify" (Verificar).
+
+##### Step 5: Complete Setup (First Time Only)
+
+Same as Google sign-in - complete the setup process on your first login.
+
+### Staying Logged In
+
+- Your session stays active while you use the system
+- If you leave for an extended period, you may need to log in again
+- Always use "Sign Out" (Cerrar Sesion) when finished on shared computers
+
+### How to Sign Out
+
+#### Step 1: Find Your Profile
+
+Look at the bottom of the sidebar for your name and profile icon.
+
+#### Step 2: Click Sign Out
+
+Click on your profile, then select "Cerrar Sesion" (Sign Out).
+
+#### Step 3: Confirm
+
+You'll be returned to the login page.
+
+---
+
+# Part 3: Reference
+
+### Frequently Asked Questions
+
+#### What if I forgot my Google password?
+
+Use Google's password recovery at accounts.google.com. MAM360 uses your Google account, so Google manages your password.
+
+#### What if I don't receive the email code?
+
+1. Check your spam/junk folder
+2. Wait 2 minutes - sometimes email is delayed
+3. Click "Resend Code" (Reenviar codigo)
+4. Make sure you entered the correct email address
+
+#### Can I use any email address?
+
+Yes, any valid email address works. You don't need a Google account to use email sign-in.
+
+#### Why can't I access certain features?
+
+Your access depends on your role. Clients cannot access PRC operations or modify trucks in Estado 2 or higher. Contact your administrator if you need additional access.
+
+#### How do I change my phone number?
+
+Currently, phone numbers can only be changed through the setup process. Contact your administrator for assistance.
+
+#### Is my information secure?
+
+Yes. MAM360 uses industry-standard security:
+
+- Encrypted connections (HTTPS)
+- Secure session management
+- Role-based access control
+- Your data is only accessible to you and authorized administrators
+
+### Troubleshooting
+
+#### "Session expired" error
+
+Your session timed out. Simply log in again.
+
+#### "Access denied" error
+
+You tried to use a feature not available to your role. This is normal - different roles have different permissions.
+
+#### Can't receive email codes
+
+1. Check spam folder
+2. Wait 5 minutes and try again
+3. Contact your administrator
+
+#### Page won't load after login
+
+1. Clear your browser cache
+2. Try a different browser
+3. Contact technical support
+
+### Important Notes
+
+- Always sign out when using shared computers
+- Keep your Google account secure with a strong password
+- If you suspect unauthorized access to your account, contact your administrator immediately
+- Your role determines what features you can use - this is by design to protect port operations
+
+---
+
+_MAM360 - Truck Logistics Management System_ _Puerto de Mamonal S.A._
