@@ -78,7 +78,9 @@
           {
             "tab": "👤 Auth",
             "pages": [
-              "TESTAuth"
+              "FeatureOverview",
+              "TESTAuth-copied-1",
+              "TESTAuth-copied-2"
             ]
           },
           {
