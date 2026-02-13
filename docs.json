@@ -11,24 +11,21 @@
   "navigation": {
     "products": [
       {
-        "product": "TEST2 Product",
+        "product": "GUIDES General",
         "global": {
           "anchors": [
-            {
-              "anchor": "Introduction",
-              "icon": "book-open-cover",
-              "href": "https://mintlify.com/docs"
-            },
             {
               "anchor": "Blog (updates)",
               "icon": "newspaper",
               "href": "https://mintlify.com/blog"
+            },
+            {
+              "anchor": "Introduction",
+              "icon": "book-open-cover",
+              "href": "https://mintlify.com/docs"
             }
           ]
-        }
-      },
-      {
-        "product": "TESTProduct",
+        },
         "languages": [
           {
             "language": "es",
@@ -108,15 +105,7 @@
         ]
       },
       {
-        "product": "PROD General",
-        "versions": [
-          {
-            "version": "TESTVersion"
-          }
-        ]
-      },
-      {
-        "product": "PROD Via360",
+        "product": "GUIDES Via360",
         "languages": [
           {
             "language": "es",
