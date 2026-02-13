@@ -101,12 +101,7 @@
                 ]
               }
             ]
-          }
-        ]
-      },
-      {
-        "product": "GUIDES Via360",
-        "languages": [
+          },
           {
             "language": "es",
             "anchors": [
@@ -130,8 +125,7 @@
                           {
                             "group": "Customization",
                             "pages": [
-                              "essentials/settings",
-                              "essentials/navigation"
+                              "essentials/settings"
                             ]
                           },
                           {
@@ -172,15 +166,34 @@
                             ]
                           }
                         ]
-                      },
-                      {
-                        "tab": "TESTTab"
                       }
                     ]
                   }
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "product": "GUIDES Via360",
+        "tabs": [
+          {
+            "tab": "Modules TOS RNDC",
+            "dropdowns": [
+              {
+                "dropdown": "Menu AUTH",
+                "pages": [
+                  "essentials/navigation"
+                ]
+              },
+              {
+                "dropdown": "Menu CAMIONES"
+              }
+            ]
+          },
+          {
+            "tab": "Modules TOC CRM"
           }
         ]
       }
