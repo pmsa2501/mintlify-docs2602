@@ -76,15 +76,7 @@
         "product": "GUIDES Via360",
         "tabs": [
           {
-            "tab": "👤 Auth",
-            "dropdowns": [
-              {
-                "dropdown": "Menu AUTH",
-                "pages": [
-                  "TESTauth"
-                ]
-              }
-            ]
+            "tab": "👤 Auth"
           },
           {
             "tab": "🚛 TOS RNDC",
