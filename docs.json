@@ -179,14 +179,19 @@
         "product": "GUIDES Via360",
         "tabs": [
           {
-            "tab": "Modules TOS RNDC",
+            "tab": "Auth",
             "dropdowns": [
               {
                 "dropdown": "Menu AUTH",
                 "pages": [
                   "essentials/navigation"
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "tab": "Modules TOS RNDC",
+            "dropdowns": [
               {
                 "dropdown": "Menu CAMIONES"
               }
