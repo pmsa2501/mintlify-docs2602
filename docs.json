@@ -76,11 +76,25 @@
         "product": "GUIDES Via360",
         "tabs": [
           {
-            "tab": "👤 Auth"
+            "tab": "👤 Auth",
+            "pages": [
+              "TESTAuth"
+            ]
           },
           {
             "tab": "🚛 TOS RNDC",
             "dropdowns": [
+              {
+                "dropdown": "TOS RNDC",
+                "anchors": [
+                  {
+                    "anchor": "Anchor Intro",
+                    "pages": [
+                      "untitled-page"
+                    ]
+                  }
+                ]
+              },
               {
                 "dropdown": "Menu CAMIONES"
               }
