@@ -15,60 +15,16 @@
         "products": [
           {
             "product": "GUIDES General",
-            "global": {
-              "anchors": [
-                {
-                  "anchor": "Blog (updates)",
-                  "icon": "newspaper",
-                  "href": "https://mintlify.com/blog"
-                },
-                {
-                  "anchor": "Introduction",
-                  "icon": "book-open-cover",
-                  "href": "https://mintlify.com/docs"
-                }
-              ]
-            },
-            "anchors": [
+            "tabs": [
               {
-                "anchor": "TESTAnchor",
-                "dropdowns": [
-                  {
-                    "dropdown": "TESTDropdown",
-                    "tabs": [
-                      {
-                        "tab": "Guides",
-                        "groups": [
-                          {
-                            "group": "Getting started",
-                            "pages": []
-                          },
-                          {
-                            "group": "Writing content",
-                            "pages": []
-                          },
-                          {
-                            "group": "AI tools",
-                            "pages": []
-                          }
-                        ]
-                      },
-                      {
-                        "tab": "API reference",
-                        "groups": [
-                          {
-                            "group": "API documentation",
-                            "pages": []
-                          },
-                          {
-                            "group": "Endpoint examples",
-                            "pages": []
-                          }
-                        ]
-                      }
-                    ]
-                  }
+                "tab": "Untitled TabGEN1",
+                "pages": [
+                  "untitled-page-copied-2",
+                  "gen-2"
                 ]
+              },
+              {
+                "tab": "Untitled Tab GENB"
               }
             ]
           },
