@@ -28,19 +28,19 @@
                 "dropdown": "Module TOS-RNDC 1",
                 "groups": [
                   {
-                    "group": "Menu Camiones",
+                    "group": "MENU CAMIONES",
                     "pages": [
                       "menu-camiones"
                     ]
                   },
                   {
-                    "group": "Menu Buques",
+                    "group": "MENU BUQUES",
                     "pages": [
                       "menu-buques"
                     ]
                   },
                   {
-                    "group": "Menu PRC, Enturnado",
+                    "group": "MENU PRC (Enturnado)",
                     "pages": [
                       "menu-prc-enturnado"
                     ]
