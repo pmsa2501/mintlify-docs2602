@@ -11,69 +11,51 @@
   "navigation": {
     "languages": [
       {
-        "language": "es"
-      },
-      {
         "language": "en",
-        "products": [
+        "tabs": [
           {
-            "product": "GUIDES General",
-            "tabs": [
-              {
-                "tab": "Untitled TabGEN1",
-                "pages": [
-                  "untitled-page-copied-2",
-                  "gen-2"
-                ]
-              },
-              {
-                "tab": "Untitled Tab GENB"
-              }
+            "tab": "Basic",
+            "pages": [
+              "untitled-page",
+              "authentication",
+              "TESTAuth-copied-1"
             ]
           },
           {
-            "product": "GUIDES Via360",
-            "tabs": [
+            "tab": "Modules",
+            "dropdowns": [
               {
-                "tab": "Auth",
-                "pages": [
-                  "FeatureOverview",
-                  "TESTAuth-copied-1",
-                  "TESTAuth-copied-2"
-                ]
-              },
-              {
-                "tab": "TOS RNDC",
-                "dropdowns": [
+                "dropdown": "Module: TOS-RNDC 1",
+                "groups": [
                   {
-                    "dropdown": "TOS RNDC",
-                    "anchors": [
-                      {
-                        "anchor": "Anchor1",
-                        "pages": [
-                          "untitled-page-copied-3"
-                        ]
-                      },
-                      {
-                        "anchor": "Anchor2",
-                        "pages": [
-                          "untitled-page-copied-1",
-                          "untitled-page-copied-4"
-                        ]
-                      }
+                    "group": "Menu 'Camiones'",
+                    "pages": [
+                      "tbd-camiones-page-1"
                     ]
                   },
                   {
-                    "dropdown": "Menu CAMIONES"
+                    "group": "Menu 'Buques'",
+                    "pages": [
+                      "tbd-buques-page-1"
+                    ]
+                  },
+                  {
+                    "group": "Menu 'PRC, Enturnado'",
+                    "pages": [
+                      "tbd-prc-page-1"
+                    ]
                   }
                 ]
               },
               {
-                "tab": "TOC CRM"
+                "dropdown": "Module: TBD"
               }
             ]
           }
         ]
+      },
+      {
+        "language": "es"
       }
     ]
   },
