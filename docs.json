@@ -97,7 +97,16 @@
                         ]
                       },
                       {
-                        "anchor": "Anchor2"
+                        "anchor": "Anchor2",
+                        "tabs": [
+                          {
+                            "tab": "Untitled Tab1",
+                            "pages": [
+                              "untitled-page",
+                              "AGENTS"
+                            ]
+                          }
+                        ]
                       }
                     ]
                   },
