@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "Mint Starter Kit",
   "colors": {
-    "primary": "#3B7DE8",
-    "light": "#6B9FF0",
-    "dark": "#1E5CC4"
+    "primary": "#2563EB",
+    "light": "#3B82F6",
+    "dark": "#1D4ED8"
   },
   "favicon": "/favicon.svg",
   "navigation": {
@@ -91,5 +91,5 @@
       "linkedin": "https://linkedin.com/company/mintlify"
     }
   },
-  "logo": "/logo/Logo PMSA-300dpi.svg"
+  "logo": "/logo/Logo PMSA_FigmaBW.svg"
 }
