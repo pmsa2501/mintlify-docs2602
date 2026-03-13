@@ -9,96 +9,102 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "products": [
+    "languages": [
       {
-        "product": "GUIDES Via360",
-        "tabs": [
+        "language": "cn",
+        "products": [
           {
-            "tab": "Auth",
-            "pages": [
-              "FeatureOverview",
-              "TESTAuth-copied-1",
-              "TESTAuth-copied-2"
-            ]
-          },
-          {
-            "tab": "TOS RNDC",
-            "dropdowns": [
+            "product": "GUIDES General",
+            "global": {
+              "anchors": [
+                {
+                  "anchor": "Blog (updates)",
+                  "icon": "newspaper",
+                  "href": "https://mintlify.com/blog"
+                },
+                {
+                  "anchor": "Introduction",
+                  "icon": "book-open-cover",
+                  "href": "https://mintlify.com/docs"
+                }
+              ]
+            },
+            "anchors": [
               {
-                "dropdown": "TOS RNDC",
-                "anchors": [
+                "anchor": "TESTAnchor",
+                "dropdowns": [
                   {
-                    "anchor": "Anchor Intro",
-                    "pages": [
-                      "untitled-page"
+                    "dropdown": "TESTDropdown",
+                    "tabs": [
+                      {
+                        "tab": "Guides",
+                        "groups": [
+                          {
+                            "group": "Getting started",
+                            "pages": []
+                          },
+                          {
+                            "group": "Writing content",
+                            "pages": []
+                          },
+                          {
+                            "group": "AI tools",
+                            "pages": []
+                          }
+                        ]
+                      },
+                      {
+                        "tab": "API reference",
+                        "groups": [
+                          {
+                            "group": "API documentation",
+                            "pages": []
+                          },
+                          {
+                            "group": "Endpoint examples",
+                            "pages": []
+                          }
+                        ]
+                      }
                     ]
                   }
                 ]
-              },
-              {
-                "dropdown": "Menu CAMIONES"
               }
             ]
           },
           {
-            "tab": "TOC CRM"
-          }
-        ]
-      },
-      {
-        "product": "GUIDES General",
-        "global": {
-          "anchors": [
-            {
-              "anchor": "Blog (updates)",
-              "icon": "newspaper",
-              "href": "https://mintlify.com/blog"
-            },
-            {
-              "anchor": "Introduction",
-              "icon": "book-open-cover",
-              "href": "https://mintlify.com/docs"
-            }
-          ]
-        },
-        "anchors": [
-          {
-            "anchor": "TESTAnchor",
-            "dropdowns": [
+            "product": "GUIDES Via360",
+            "tabs": [
               {
-                "dropdown": "TESTDropdown",
-                "tabs": [
+                "tab": "Auth",
+                "pages": [
+                  "FeatureOverview",
+                  "TESTAuth-copied-1",
+                  "TESTAuth-copied-2"
+                ]
+              },
+              {
+                "tab": "TOS RNDC",
+                "dropdowns": [
                   {
-                    "tab": "Guides",
-                    "groups": [
+                    "dropdown": "TOS RNDC",
+                    "anchors": [
                       {
-                        "group": "Getting started",
-                        "pages": []
-                      },
-                      {
-                        "group": "Writing content",
-                        "pages": []
-                      },
-                      {
-                        "group": "AI tools",
-                        "pages": []
+                        "anchor": "Anchor Intro",
+                        "pages": [
+                          "untitled-page",
+                          "untitled-page-copied-3"
+                        ]
                       }
                     ]
                   },
                   {
-                    "tab": "API reference",
-                    "groups": [
-                      {
-                        "group": "API documentation",
-                        "pages": []
-                      },
-                      {
-                        "group": "Endpoint examples",
-                        "pages": []
-                      }
-                    ]
+                    "dropdown": "Menu CAMIONES"
                   }
                 ]
+              },
+              {
+                "tab": "TOC CRM"
               }
             ]
           }
