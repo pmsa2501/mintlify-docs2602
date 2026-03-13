@@ -92,20 +92,14 @@
                       {
                         "anchor": "Anchor1",
                         "pages": [
-                          "untitled-page",
                           "untitled-page-copied-3"
                         ]
                       },
                       {
                         "anchor": "Anchor2",
-                        "tabs": [
-                          {
-                            "tab": "Untitled Tab1",
-                            "pages": [
-                              "untitled-page",
-                              "AGENTS"
-                            ]
-                          }
+                        "pages": [
+                          "untitled-page-copied-1",
+                          "untitled-page-copied-4"
                         ]
                       }
                     ]
