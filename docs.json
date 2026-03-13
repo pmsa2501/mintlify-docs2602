@@ -90,11 +90,14 @@
                     "dropdown": "TOS RNDC",
                     "anchors": [
                       {
-                        "anchor": "Anchor Intro",
+                        "anchor": "Anchor1",
                         "pages": [
                           "untitled-page",
                           "untitled-page-copied-3"
                         ]
+                      },
+                      {
+                        "anchor": "Anchor2"
                       }
                     ]
                   },
