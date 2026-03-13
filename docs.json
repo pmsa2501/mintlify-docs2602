@@ -25,22 +25,22 @@
             "tab": "Modules",
             "dropdowns": [
               {
-                "dropdown": "Module: TOS-RNDC 1",
+                "dropdown": "Module TOS-RNDC 1",
                 "groups": [
                   {
-                    "group": "Menu 'Camiones'",
+                    "group": "Menu Camiones",
                     "pages": [
                       "tbd-camiones-page-1"
                     ]
                   },
                   {
-                    "group": "Menu 'Buques'",
+                    "group": "Menu Buques",
                     "pages": [
                       "tbd-buques-page-1"
                     ]
                   },
                   {
-                    "group": "Menu 'PRC, Enturnado'",
+                    "group": "Menu PRC, Enturnado",
                     "pages": [
                       "tbd-prc-page-1"
                     ]
