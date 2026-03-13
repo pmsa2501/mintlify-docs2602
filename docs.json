@@ -16,9 +16,9 @@
           {
             "tab": "Basic",
             "pages": [
-              "_GUIDES-Via360/LANGUAGE-English/TAB-Basic/Introduction",
+              "_GUIDES-Via360/LANGUAGE-English/TAB-Basic/introduction",
               "_GUIDES-Via360/LANGUAGE-English/TAB-Basic/authentication",
-              "TESTAuth-copied-1"
+              "_GUIDES-Via360/ENG/Basic/Ref"
             ]
           },
           {
@@ -30,19 +30,19 @@
                   {
                     "group": "Menu Camiones",
                     "pages": [
-                      "tbd-camiones-page-1"
+                      "menu-camiones"
                     ]
                   },
                   {
                     "group": "Menu Buques",
                     "pages": [
-                      "tbd-buques-page-1"
+                      "menu-buques"
                     ]
                   },
                   {
                     "group": "Menu PRC, Enturnado",
                     "pages": [
-                      "tbd-prc-page-1"
+                      "menu-prc-enturnado"
                     ]
                   }
                 ]
