@@ -27,22 +27,26 @@
             "dropdowns": [
               {
                 "dropdown": "Module TOS-RNDC 1",
-                "groups": [
+                "pages": [
+                  "introduccion",
                   {
                     "group": "MENU CAMIONES",
                     "pages": [
+                      "main-screen-general-features",
                       "menu-camiones"
                     ]
                   },
                   {
                     "group": "MENU BUQUES",
                     "pages": [
+                      "main-screen-general-features-1",
                       "menu-buques"
                     ]
                   },
                   {
                     "group": "MENU PRC (Enturnado)",
                     "pages": [
+                      "main-table-general-features",
                       "menu-prc-enturnado"
                     ]
                   }
