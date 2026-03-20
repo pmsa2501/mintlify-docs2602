@@ -16,9 +16,9 @@
           {
             "tab": "Basic",
             "pages": [
-              "_GUIDES-Via360/LANGUAGE-English/TAB-Basic/introduction",
-              "_GUIDES-Via360/LANGUAGE-English/TAB-Basic/authentication",
-              "_GUIDES-Via360/LANGUAGE-English/TAB-Basic/profile-settings"
+              "_GUIDES-Via360/LANGUAGE-English/M00__TAB-Basic/M00-00_introduction",
+              "_GUIDES-Via360/LANGUAGE-English/M00__TAB-Basic/M00-01_authentication",
+              "_GUIDES-Via360/LANGUAGE-English/M00__TAB-Basic/M00-02_profile-settings"
             ]
           },
           {
@@ -27,26 +27,24 @@
               {
                 "dropdown": "Module TOS-RNDC 1",
                 "pages": [
-                  "introduccion",
+                  "_GUIDES-Via360/LANGUAGE-English/M0X__TAB-Modules/M01__Module-TOS-RNDC-1/M01-00_intro-Module01",
+                  "_GUIDES-Via360/LANGUAGE-English/M0X__TAB-Modules/M01__Module-TOS-RNDC-1/M01-00_main-table-general-features",
                   {
                     "group": "MENU CAMIONES",
                     "pages": [
-                      "main-screen-general-features",
-                      "menu-camiones"
+                      "_GUIDES-Via360/LANGUAGE-English/M0X__TAB-Modules/M01__Module-TOS-RNDC-1/M01-01_menu-camiones"
                     ]
                   },
                   {
                     "group": "MENU BUQUES",
                     "pages": [
-                      "main-screen-general-features-1",
-                      "menu-buques"
+                      "_GUIDES-Via360/LANGUAGE-English/M0X__TAB-Modules/M01__Module-TOS-RNDC-1/M01-02_menu-buques"
                     ]
                   },
                   {
                     "group": "MENU PRC (Enturnado)",
                     "pages": [
-                      "main-table-general-features",
-                      "menu-prc-enturnado"
+                      "_GUIDES-Via360/LANGUAGE-English/M0X__TAB-Modules/M01__Module-TOS-RNDC-1/M01-03_menu-prc-enturnado"
                     ]
                   }
                 ]
