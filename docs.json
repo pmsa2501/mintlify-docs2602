@@ -30,19 +30,19 @@
                   "_GUIDES-Via360/LANGUAGE-English/M0X__TAB-Modules/M01__Module-TOS-RNDC-1/M01-00_intro-Module01",
                   "_GUIDES-Via360/LANGUAGE-English/M0X__TAB-Modules/M01__Module-TOS-RNDC-1/M01-00_main-table-general-features",
                   {
-                    "group": "MENU CAMIONES",
+                    "group": "MENU: Camiones",
                     "pages": [
                       "_GUIDES-Via360/LANGUAGE-English/M0X__TAB-Modules/M01__Module-TOS-RNDC-1/M01-01_menu-camiones"
                     ]
                   },
                   {
-                    "group": "MENU BUQUES",
+                    "group": "MENU: Buques",
                     "pages": [
                       "_GUIDES-Via360/LANGUAGE-English/M0X__TAB-Modules/M01__Module-TOS-RNDC-1/M01-02_menu-buques"
                     ]
                   },
                   {
-                    "group": "MENU PRC (Enturnado)",
+                    "group": "MENU: PRC (Turnos)",
                     "pages": [
                       "_GUIDES-Via360/LANGUAGE-English/M0X__TAB-Modules/M01__Module-TOS-RNDC-1/M01-03_menu-prc-enturnado"
                     ]
