@@ -62,10 +62,29 @@
         "language": "es",
         "tabs": [
           {
-            "tab": "Basico"
+            "tab": "Basico",
+            "pages": [
+              "_GUIDES-Via360/LANGUAGE-Espanol/M00__TAB-Basico/M00-01_authenticacion"
+            ]
           },
           {
-            "tab": "Modulos"
+            "tab": "Modulos",
+            "dropdowns": [
+              {
+                "dropdown": "Modulo TOS-RNDC 1",
+                "tabs": [
+                  {
+                    "tab": "Menu Camiones"
+                  },
+                  {
+                    "tab": "Menu Buques"
+                  },
+                  {
+                    "tab": "Menu PRC (Turnos)"
+                  }
+                ]
+              }
+            ]
           }
         ]
       }
