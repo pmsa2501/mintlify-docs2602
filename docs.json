@@ -61,6 +61,7 @@
         "dropdowns": [
           {
             "dropdown": "Module TOS-RNDC 1",
+            "icon": "book-blank",
             "groups": [
               {
                 "group": "Basic",
