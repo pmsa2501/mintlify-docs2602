@@ -12,47 +12,38 @@
     "languages": [
       {
         "language": "en",
-        "tabs": [
+        "dropdowns": [
           {
-            "tab": "Basic",
-            "pages": [
-              "_GUIDES-Via360/LANGUAGE-English/M00__TAB-Basic/M00-00_introduction",
-              "_GUIDES-Via360/LANGUAGE-English/M00__TAB-Basic/M00-01_authentication",
-              "_GUIDES-Via360/LANGUAGE-English/M00__TAB-Basic/M00-02_profile-settings"
-            ]
-          },
-          {
-            "tab": "Modules",
-            "dropdowns": [
+            "dropdown": "Module TOS-RNDC 1",
+            "groups": [
               {
-                "dropdown": "Module TOS-RNDC 1",
-                "icon": "book-blank",
+                "group": "Basic",
                 "pages": [
-                  {
-                    "group": "Menu Camiones",
-                    "pages": [
-                      "_GUIDES-Via360/LANGUAGE-English/M0X__TAB-Modules/M01__Module-TOS-RNDC-1/1-Camiones/M01-00_intro-Module01"
-                    ]
-                  },
-                  {
-                    "group": "Menu Buques",
-                    "pages": [
-                      "_GUIDES-Via360/LANGUAGE-English/M0X__TAB-Modules/M01__Module-TOS-RNDC-1/2-Buques/M01-02A-BuquesDispatch",
-                      "_GUIDES-Via360/LANGUAGE-English/M0X__TAB-Modules/M01__Module-TOS-RNDC-1/2-Buques/M01-02B-Filters",
-                      "_GUIDES-Via360/LANGUAGE-English/M0X__TAB-Modules/M01__Module-TOS-RNDC-1/2-Buques/M01-02C-InventorySync"
-                    ]
-                  },
-                  {
-                    "group": "Menu PRC (Turnos)",
-                    "pages": [
-                      "_GUIDES-Via360/LANGUAGE-English/M0X__TAB-Modules/M01__Module-TOS-RNDC-1/3-PRC/M01-03A-PRC",
-                      "_GUIDES-Via360/LANGUAGE-English/M0X__TAB-Modules/M01__Module-TOS-RNDC-1/3-PRC/M01-03B-RNDC"
-                    ]
-                  }
+                  "_GUIDES-Via360/LANGUAGE-English/M00__TAB-Basic/M00-00_GettingStarted",
+                  "_GUIDES-Via360/LANGUAGE-English/M00__TAB-Basic/M00-01_authentication",
+                  "_GUIDES-Via360/LANGUAGE-English/M00__TAB-Basic/M00-02_profile-settings"
                 ]
               },
               {
-                "dropdown": "Module TBD"
+                "group": "Menu Camiones",
+                "pages": [
+                  "_GUIDES-Via360/LANGUAGE-English/M0X__TAB-Modules/M01__Module-TOS-RNDC-1/1-Camiones/M01-00_intro-Module01"
+                ]
+              },
+              {
+                "group": "Menu Buques",
+                "pages": [
+                  "_GUIDES-Via360/LANGUAGE-English/M0X__TAB-Modules/M01__Module-TOS-RNDC-1/2-Buques/M01-02A-BuquesDispatch",
+                  "_GUIDES-Via360/LANGUAGE-English/M0X__TAB-Modules/M01__Module-TOS-RNDC-1/2-Buques/M01-02B-Filters",
+                  "_GUIDES-Via360/LANGUAGE-English/M0X__TAB-Modules/M01__Module-TOS-RNDC-1/2-Buques/M01-02C-InventorySync"
+                ]
+              },
+              {
+                "group": "Menu PRC (Turnos)",
+                "pages": [
+                  "_GUIDES-Via360/LANGUAGE-English/M0X__TAB-Modules/M01__Module-TOS-RNDC-1/3-PRC/M01-03A-PRC",
+                  "_GUIDES-Via360/LANGUAGE-English/M0X__TAB-Modules/M01__Module-TOS-RNDC-1/3-PRC/M01-03B-RNDC"
+                ]
               }
             ]
           }
@@ -63,6 +54,7 @@
         "dropdowns": [
           {
             "dropdown": "Modulo TOS-RNDC 1",
+            "icon": "book-blank",
             "groups": [
               {
                 "group": "Basico",
