@@ -59,7 +59,15 @@
         ]
       },
       {
-        "language": "es"
+        "language": "es",
+        "tabs": [
+          {
+            "tab": "Basico"
+          },
+          {
+            "tab": "Modulos"
+          }
+        ]
       }
     ]
   },
