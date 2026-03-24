@@ -60,45 +60,42 @@
       },
       {
         "language": "es",
-        "tabs": [
+        "dropdowns": [
           {
-            "tab": "Basico",
-            "pages": [
-              "_GUIDES-Via360/LANGUAGE-Espanol/M00__TAB-Basico/M00-01_authenticacion"
-            ]
-          },
-          {
-            "tab": "Modulos",
-            "dropdowns": [
+            "dropdown": "Modulo TOS-RNDC 1",
+            "groups": [
               {
-                "dropdown": "Modulo TOS-RNDC 1",
-                "tabs": [
-                  {
-                    "tab": "Menu Camiones",
-                    "pages": [
-                      "_GUIDES-Via360/LANGUAGE-Espanol/M0X__TAB-Modulos/M01__Modulo-TOS-RNDC-1/1-Camiones/M01-01A_Generar-carga",
-                      "_GUIDES-Via360/LANGUAGE-Espanol/M0X__TAB-Modulos/M01__Modulo-TOS-RNDC-1/1-Camiones/M01-01B_Detalle-de-carga",
-                      "_GUIDES-Via360/LANGUAGE-Espanol/M0X__TAB-Modulos/M01__Modulo-TOS-RNDC-1/1-Camiones/M01-01C_Formulario",
-                      "_GUIDES-Via360/LANGUAGE-Espanol/M0X__TAB-Modulos/M01__Modulo-TOS-RNDC-1/1-Camiones/M01-01D-Filtro",
-                      "_GUIDES-Via360/LANGUAGE-Espanol/M0X__TAB-Modulos/M01__Modulo-TOS-RNDC-1/1-Camiones/M01-01E-Estados",
-                      "_GUIDES-Via360/LANGUAGE-Espanol/M0X__TAB-Modulos/M01__Modulo-TOS-RNDC-1/1-Camiones/M01-01F-Descargar"
-                    ]
-                  },
-                  {
-                    "tab": "Menu Buques",
-                    "pages": [
-                      "_GUIDES-Via360/LANGUAGE-Espanol/M0X__TAB-Modulos/M01__Modulo-TOS-RNDC-1/2-Buques/M01-02A-DespachoDeBuques",
-                      "_GUIDES-Via360/LANGUAGE-Espanol/M0X__TAB-Modulos/M01__Modulo-TOS-RNDC-1/2-Buques/M01-02B-Filtros",
-                      "_GUIDES-Via360/LANGUAGE-Espanol/M0X__TAB-Modulos/M01__Modulo-TOS-RNDC-1/2-Buques/M01-02C-SincronizacionDeInventario"
-                    ]
-                  },
-                  {
-                    "tab": "Menu PRC (Turnos)",
-                    "pages": [
-                      "_GUIDES-Via360/LANGUAGE-Espanol/M0X__TAB-Modulos/M01__Modulo-TOS-RNDC-1/3-PRC/M01-03A-PRC",
-                      "_GUIDES-Via360/LANGUAGE-Espanol/M0X__TAB-Modulos/M01__Modulo-TOS-RNDC-1/3-PRC/M01-03B-RNDC"
-                    ]
-                  }
+                "group": "Basico",
+                "pages": [
+                  "_GUIDES-Via360/LANGUAGE-Espanol/M00__TAB-Basico/M00-00_EmpezarAqui",
+                  "_GUIDES-Via360/LANGUAGE-Espanol/M00__TAB-Basico/M00-01_authenticacion",
+                  "_GUIDES-Via360/LANGUAGE-Espanol/M00__TAB-Basico/M00-02_ajustes-perfil"
+                ]
+              },
+              {
+                "group": "Menu Camiones",
+                "pages": [
+                  "_GUIDES-Via360/LANGUAGE-Espanol/M0X__TAB-Modulos/M01__Modulo-TOS-RNDC-1/1-Camiones/M01-01A_Generar-carga",
+                  "_GUIDES-Via360/LANGUAGE-Espanol/M0X__TAB-Modulos/M01__Modulo-TOS-RNDC-1/1-Camiones/M01-01B_Detalle-de-carga",
+                  "_GUIDES-Via360/LANGUAGE-Espanol/M0X__TAB-Modulos/M01__Modulo-TOS-RNDC-1/1-Camiones/M01-01C_Formulario",
+                  "_GUIDES-Via360/LANGUAGE-Espanol/M0X__TAB-Modulos/M01__Modulo-TOS-RNDC-1/1-Camiones/M01-01D-Filtro",
+                  "_GUIDES-Via360/LANGUAGE-Espanol/M0X__TAB-Modulos/M01__Modulo-TOS-RNDC-1/1-Camiones/M01-01E-Estados",
+                  "_GUIDES-Via360/LANGUAGE-Espanol/M0X__TAB-Modulos/M01__Modulo-TOS-RNDC-1/1-Camiones/M01-01F-Descargar"
+                ]
+              },
+              {
+                "group": "Menu Buques",
+                "pages": [
+                  "_GUIDES-Via360/LANGUAGE-Espanol/M0X__TAB-Modulos/M01__Modulo-TOS-RNDC-1/2-Buques/M01-02A-DespachoDeBuques",
+                  "_GUIDES-Via360/LANGUAGE-Espanol/M0X__TAB-Modulos/M01__Modulo-TOS-RNDC-1/2-Buques/M01-02B-Filtros",
+                  "_GUIDES-Via360/LANGUAGE-Espanol/M0X__TAB-Modulos/M01__Modulo-TOS-RNDC-1/2-Buques/M01-02C-SincronizacionDeInventario"
+                ]
+              },
+              {
+                "group": "Menu PRC (Turnos)",
+                "pages": [
+                  "_GUIDES-Via360/LANGUAGE-Espanol/M0X__TAB-Modulos/M01__Modulo-TOS-RNDC-1/3-PRC/M01-03A-PRC",
+                  "_GUIDES-Via360/LANGUAGE-Espanol/M0X__TAB-Modulos/M01__Modulo-TOS-RNDC-1/3-PRC/M01-03B-RNDC"
                 ]
               }
             ]
