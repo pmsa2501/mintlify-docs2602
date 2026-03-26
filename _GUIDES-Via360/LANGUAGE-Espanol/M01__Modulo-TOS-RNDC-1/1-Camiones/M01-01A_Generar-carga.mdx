@@ -1,3 +1,153 @@
 ---
 title: "Generar Carga"
 ---
+
+Generate Cargo — Camiones
+
+## Overview
+
+The **Generate Cargo** feature allows authorized users to register a new truck cargo entry in the Camiones table. Clicking **\+ Generar carga** opens a 6-step wizard that collects all required information — from client and product details to the driver, vehicle, and supporting documents. Once submitted, a new record is created at **Estado 0 (Registro generado en sistema)** and assigned a sequential **MILPA-XXX** identifier.
+
+> **Note:** The platform uses a system or roles that determine whether a user can create new cargo entries. 
+
+---
+
+## How to Create a Cargo Entry
+
+### Step 1 — Navigate to Camiones and open the wizard
+
+From the main dashboard, click **Transporte** in the left sidebar, then select **Camiones**. You will see the full Camiones table showing all existing records.
+
+Click the blue **\+ Generar carga** button in the top-right toolbar above the table. This opens the **Formulario de Generar Carga** — a 6-step wizard.
+
+<Frame>
+  <img
+    src="/images/2026-03-26-005520.png"
+    alt="2026 03 26 005520"
+    title="2026 03 26 005520"
+    style={{ width:"86%" }}
+  />
+</Frame>
+
+---
+
+### Step 2 — Cliente (Step 1 of 6)
+
+Select the client company from the **Cliente (Razón Social)** dropdown.
+
+The **Código Cliente** field fills automatically based on your selection — for example, selecting _C.I. Milpa_ generates the code _MIL_.
+
+Click **Siguiente** to continue.
+
+---
+
+### Step 3 — Producto (Step 2 of 6)
+
+Select the product from the **Producto** dropdown. The **Código Producto** field auto-populates.
+
+Then select the external party category from **Categoría Externo**:
+
+- Cliente
+- Proveedor General
+- Proveedor HSE-01 (Transporte) through HSE-05 (Inspección caídas)
+- Agencia Gubernamental
+
+Click **Siguiente** to continue.
+
+---
+
+### Step 4 — Empresa Transportadora (Step 3 of 6)
+
+Select the transport company from the **Empresa Transportadora** dropdown.
+
+The **NIT** (tax ID) and **Vigencia** (contract expiry date) fields auto-fill from the company's record. The Vigencia date appears in **green** when the contract is currently valid.
+
+> **Warning:** If the Vigencia date is expired or near expiry, coordinate with your administrator before proceeding.
+
+Click **Siguiente** to continue.
+
+---
+
+### Step 5 — Conductor y Vehículo (Step 4 of 6)
+
+Search for the driver in the **Conductor** field by name or cédula number. The **Cédula** and **Celular** fields auto-fill from the driver's record.
+
+Then select the truck's license plate from the **Placa Cabezote** dropdown. Optionally enter a **Placa Trailer** if the truck is pulling a trailer — this field is not required.
+
+Click **Siguiente** to continue.
+
+---
+
+### Step 6 — Revisión (Step 5 of 6)
+
+Review the summary of all entries before submitting.
+
+| Field | Your selection |
+| :-- | :-- |
+| Cliente | Selected client name |
+| Producto | Selected product name |
+| Transportadora | Selected transport company |
+| Conductor | Selected driver name |
+| Placa | Selected license plate |
+| Categoría | Selected external category |
+
+If any information is incorrect, click **Atrás** to go back and correct it. When everything looks right, click **Siguiente**.
+
+---
+
+### Step 7 — Adjuntos (Step 6 of 6)
+
+Enter the **8-digit Manifiesto Electrónico de Carga** number in the field provided. Then upload the required documents:
+
+| Document | Description |
+| :-- | :-- |
+| DOC. 1 | Orden de despacho |
+| DOC. 2 | Remesa |
+| DOC. 3 | Manifiesto Electrónico de Carga |
+| DOC. 4 | Hoja de tiempos, Cargue/Descargue |
+| DOC. 5 | Conductor — ID |
+| DOC. 6 | Conductor — Pago Seguridad Social |
+| Otros | Any additional documents |
+
+Click **Finalizar** to submit.
+
+> **Note:** After submission, your new cargo entry will appear at the top of the Camiones table with a **MILPA-XXX** ID and **Estado 0 (Registro generado en sistema)**.
+
+---
+
+## Frequently Asked Questions
+
+**Why can't I see the \+ Generar carga button?**\
+The button is visible to all users but only functional for Admin and Operator roles. If clicking it returns an error, contact your system administrator to verify your account permissions.
+
+**What does Estado 0 mean after I submit?**\
+Estado 0 means _Registro generado en sistema_ — the cargo entry has been created and is waiting to be processed. It will progress through the workflow as the truck moves through port operations.
+
+**Can I edit a cargo entry after submitting?**\
+Entries cannot be edited directly from the table. Click any row to open the detail sheet and view the full record. If a correction is needed, contact your system administrator.
+
+**What if the transport company's Vigencia is expired?**\
+The company will still appear in the dropdown but the Vigencia date will show in red. Consult your administrator before proceeding — dispatching with an expired transport contract may be a compliance issue.
+
+**Is the Placa Trailer required?**\
+No. The Placa Trailer field is optional and can be left blank if the truck is not towing a trailer.
+
+---
+
+## Troubleshooting
+
+- **Error on submission** — Confirm all required fields in every step are complete. Use **Atrás** to revisit any step.
+- **Driver not found in dropdown** — The driver may not be registered. Contact your administrator to add the driver record.
+- **Plate not found in dropdown** — The vehicle may not be registered. Contact your administrator to add the plate.
+- **New entry not appearing in table** — Try refreshing the page. If the entry still does not appear, contact technical support.
+
+---
+
+## Important Notes
+
+> **Tip:** All auto-filled fields (Código Cliente, Código Producto, NIT, Vigencia, Cédula, Celular) are read-only and sourced from registered records. If any value appears incorrect, notify your administrator to update the source record.
+
+- The wizard must be completed in full — you cannot save a partial entry mid-wizard
+- The Manifiesto Electrónico de Carga number must be exactly **8 digits**
+- New entries always start at **Estado 0** and are managed through the Camiones detail sheet workflow (see EPIC M01.1B)
+- Cargo entries cannot be deleted through the interface — contact your administrator for corrections
