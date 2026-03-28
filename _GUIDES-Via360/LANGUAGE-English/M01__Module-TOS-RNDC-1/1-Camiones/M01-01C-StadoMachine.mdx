@@ -1,0 +1,157 @@
+---
+title: "Estado Machine"
+description: "How every truck moves through the 13-state port workflow — from cargo generation to final weighing."
+---
+
+## Overview
+
+Every truck registered in MAM360 is always in exactly one of **13 estados**. The Estado Machine enforces which transitions are allowed, auto-assigns operational values like Turno numbers and timestamps, and restricts who can change what based on role. Port operators never have to track state manually — the system handles it.
+
+---
+
+## The 13 Estados
+
+| # | Name | What Happens |
+| --- | --- | --- |
+| 0 | Registro generado | Load created via wizard — load number and initial timestamp auto-generated |
+| 1 | Camión registrado (origen) | Truck registered in the origin system |
+| 2 | Camión despachado (origen) | Loaded and dispatched from origin — **Turno number auto-generated** |
+| 3 | Camión en cola PRC | In PRC queue — promoted by port operator |
+| 4 | Camión en tránsito (PRC → Puerto) | In transit from PRC to port |
+| 5 | Camión en portería | At the port gate |
+| 6 | Camión ingresó al puerto | Entered port facility |
+| 7 | Camión en pesaje inicial | Initial weighing — RNDC REIN2 trigger point |
+| 8 | Camión descargando/cargando | Unloading or loading at warehouse — **inventory record auto-created** |
+| 9 | Completado | Final weighing complete — full cycle recorded |
+| 11 | Cancelado | Cancelled from PRC stages (requires confirmation) |
+| 101 | X1 — Novedad abierta | Problem state — captures description and stores the return point |
+| 102 | X2 — Novedad cerrada | Terminal problem state (escalation) — no further transitions |
+
+<Note>
+  Estados 10 and 12 (hold and rescheduled) are available in the Admin dropdown but are not part of the standard sequential flow.
+</Note>
+
+---
+
+## Automatic Behaviors
+
+You do not need to fill in these values — the system assigns them automatically:
+
+| Trigger | What Gets Assigned |
+| --- | --- |
+| Load created (Estado 0) | Unique load number (MILPA-XXX format) \+ creation timestamp |
+| Truck dispatched (Estado 2) | **Turno number** (format: CCC-PP##-####) |
+| Every estado transition | **Timestamp** recorded for that estado |
+| Cargo reaches Estado 8 | **Buques inventory record** created |
+| PRC queue | **Reorders automatically** as trucks progress |
+| Estado transitions (any) | **Time differentials** computed between each estado pair for KPI reporting |
+
+---
+
+## How Transitions Work
+
+### From the Camiones Table — Admin
+
+Admins can move any truck to **any of the 13 estados** directly from the table. This is used for corrections. Click the estado badge on any row to open the full dropdown.
+
+### From the PRC Interface — Operators
+
+Operators work inside pile details in PRC. The estado dropdown here shows **only the valid next transitions** for that truck's current estado — not all 13. This prevents operators from accidentally skipping stages or reversing completed steps.
+
+**Valid transition paths:**
+
+| Current Estado | Valid Next Estados |
+| --- | --- |
+| 2 | 3 (promote) or 101 (problem) |
+| 3 | 4 (schedule) or 101 (problem) |
+| 4 | 101 only — dispatch is via the ENVIAR action, not the dropdown |
+| 101 | 2, 3, or 4 (return) — or escalate to 102 |
+| 102 | Terminal — no further transitions |
+
+<Info>
+  If you need a correction that falls outside the valid transition set, ask an Admin to update the estado from the Camiones table.
+</Info>
+
+---
+
+## Batch Dispatch — ENVIAR
+
+ENVIAR moves all selected Estado 4 trucks into the port at once. This is the standard dispatch action for port operators.
+
+1. In the PRC view, open the pile with trucks in **Estado 4**.
+2. Select the trucks you want to dispatch.
+3. Click **ENVIAR**.
+4. A confirmation modal appears listing the selected trucks.
+5. Click **Continuar / Confirmar** — all selected trucks move to **Estado 5** and are removed from the PRC queue.
+
+<Warning>
+  ENVIAR is irreversible from the operator view. If a truck was dispatched in error, an Admin must correct the estado from the Camiones table.
+</Warning>
+
+---
+
+## Problem Reporting — Estado 101 (X1)
+
+When a truck cannot proceed normally:
+
+1. In PRC detail, change the truck's estado to **101 (X1 — Novedad abierta)**.
+2. A modal opens with two required fields:
+   - **Descripción del problema** — what went wrong.
+   - **Estado de retorno** — where the truck should resume when the issue is resolved.
+3. Submit the form. The truck is flagged and the return point is stored.
+4. To resolve: change the estado to 2, 3, or 4 (as set during X1 entry).
+5. If the issue cannot be resolved, escalate to **102 (X2 — Novedad cerrada)** — this is a terminal state.
+
+<Note>
+  Trucks in Estado 101 or 102 cannot be cancelled. Cancellation is only available for Estados 2, 3, and 4.
+</Note>
+
+---
+
+## Role Restrictions
+
+Access is enforced at the server level — not just hidden in the UI.
+
+| Role | Estados 0–1 | Estados 2–9 | Notes |
+| --- | --- | --- | --- |
+| Administrador | ✅ Full access | ✅ Full access | Can jump to any estado from the Camiones table |
+| Operador | ✅ Yes | ✅ Valid transitions only | PRC queue management \+ weighing (Estados 7–8) |
+| Cliente | ✅ Yes | ❌ Blocked | Locked out once the truck enters the port queue |
+
+Once a truck reaches Estado 2, Clients can no longer modify it. Any attempt will be blocked with an error message.
+
+---
+
+## Architecture Notes
+
+These are intentional design decisions — not limitations:
+
+| Behavior | Reason |
+| --- | --- |
+| Default role = Cliente | Protects port operations by default. Higher permissions require explicit Admin grant. |
+| RNDC submission is async | Estado transitions don't wait on the government API. The truck keeps moving regardless of RNDC submission status. |
+| Cancel restricted to Estados 2–4 | Once dispatched (Estado 5\+), cancellation requires Admin — you can't un-dispatch a truck already inside the terminal. |
+| X1 stores the return estado | When a problem is logged, the system remembers the resumption point. No manual tracking needed. |
+| Weight limit at database level | Colombian transport regulation (53,300 kg) is enforced by the database itself — cannot be bypassed via the UI. |
+
+---
+
+## Related Features
+
+<CardGroup cols={2}>
+  <Card title="PRC Queue" icon="book-blank" href="/docs/transporte/prc">
+    Manage client piles and dispatch trucks via ENVIAR.
+  </Card>
+
+  <Card title="Camiones Table" icon="book-blank" href="/docs/transporte/camiones-tabla">
+    View, filter, and manage all truck records.
+  </Card>
+
+  <Card title="Buques Inventory" icon="book-blank" href="/docs/transporte/buques">
+    Inventory records created automatically at Estado 8.
+  </Card>
+
+  <Card title="Export & RNDC" icon="book-blank" href="/docs/transporte/export">
+    Download exports and generate RNDC flat files.
+  </Card>
+</CardGroup>
