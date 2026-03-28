@@ -5,7 +5,7 @@ description: "How every truck moves through the 13-state port workflow — from 
 
 ## Overview
 
-Every truck registered in MAM360 is always in exactly one of **13 estados**. The Estado Machine enforces which transitions are allowed, auto-assigns operational values like Turno numbers and timestamps, and restricts who can change what based on role. Port operators never have to track state manually — the system handles it.
+Every truck registered as part of the Cargo Generation is always in exactly one of **13 estados**. The Estado Machine enforces which transitions are allowed, auto-assigns operational values like Turno numbers and timestamps, and restricts who can change what based on role. 
 
 ---
 
@@ -24,8 +24,8 @@ Every truck registered in MAM360 is always in exactly one of **13 estados**. The
 | 8 | Camión descargando/cargando | Unloading or loading at warehouse — **inventory record auto-created** |
 | 9 | Completado | Final weighing complete — full cycle recorded |
 | 11 | Cancelado | Cancelled from PRC stages (requires confirmation) |
-| 101 | X1 — Novedad abierta | Problem state — captures description and stores the return point |
-| 102 | X2 — Novedad cerrada | Terminal problem state (escalation) — no further transitions |
+| X1 | X1 — Novedad abierta | Problem state — captures description and stores the return point |
+| X2 | X2 — Novedad cerrada | Terminal problem state (escalation) — no further transitions |
 
 <Note>
   Estados 10 and 12 (hold and rescheduled) are available in the Admin dropdown but are not part of the standard sequential flow.
@@ -105,20 +105,6 @@ When a truck cannot proceed normally:
 <Note>
   Trucks in Estado 101 or 102 cannot be cancelled. Cancellation is only available for Estados 2, 3, and 4.
 </Note>
-
----
-
-## Role Restrictions
-
-Access is enforced at the server level — not just hidden in the UI.
-
-| Role | Estados 0–1 | Estados 2–9 | Notes |
-| --- | --- | --- | --- |
-| Administrador | ✅ Full access | ✅ Full access | Can jump to any estado from the Camiones table |
-| Operador | ✅ Yes | ✅ Valid transitions only | PRC queue management \+ weighing (Estados 7–8) |
-| Cliente | ✅ Yes | ❌ Blocked | Locked out once the truck enters the port queue |
-
-Once a truck reaches Estado 2, Clients can no longer modify it. Any attempt will be blocked with an error message.
 
 ---
 
