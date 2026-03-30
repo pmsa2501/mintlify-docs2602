@@ -1,200 +1,206 @@
 ---
 title: "Cargo Detail"
----
-
+description: "Use the Detail Sheet to review transaction data, change estados, manage documents, and preview RNDC payloads."
 ---
 
 ## Feature Overview
-
-### What is the Detail Sheet?
-
-The Detail Sheet is a panel that appears when you click on any row in the Camiones (trucks) table. It shows all the information about that transaction and allows authorized users to make changes like updating the status, registering problems, or uploading documents.
-
----
-
-## Step-by-Step Usage
-
-### How to Open the Detail Sheet
-
-#### Step 1: Navigate to Camiones
-
-From the dashboard, click on **Transporte** \> **Camiones** in the sidebar menu.
-
-#### Step 2: Click on a Row
-
-Click anywhere on the row for the transaction you want to view. The Detail Sheet will slide open from the right side of the screen.
-
-#### Step 3: View Transaction Information
-
-The Detail Sheet is organized into four columns:
-
-| Column | Information |
-| :-- | :-- |
-| **Fechas y Horas** | Timestamps for each estado (status) change |
-| **Cliente/Producto** | Customer name, product type, and pile number |
-| **Empresa/Conductor/Camion** | Transport company, driver info, and truck details |
-| **Documentos/PRC** | Attached documents and port control information |
-
-#### Step 4: Close the Detail Sheet
-
-Click the **X** button in the top right corner, or click outside the panel to close it.
-
-### How to Change the Estado (Status)
-
-> **Note**: Only port staff (Operators and Administrators) can change estados from Estado 2 onwards. Transport company users can only modify records at Estados 0 and 1.
-
-#### Step 1: Click the Estado Badge
-
-The current estado is shown as a colored badge at the top of the Detail Sheet. Click on it to open the dropdown.
-
-#### Step 2: Select a New Estado
-
-Choose the appropriate estado from the list. The system will save the change automatically.
-
-#### Step 3: Verify the Change
-
-A success message will appear, and the badge will update to show the new estado.
-
-### How to Report a Problem (X1 Novedad abierta)
-
-If a truck has a problem during the process (Estados 2-8), you can register it using the X1 button.
-
-#### Step 1: Click "Registrar Novedad (X1)"
-
-This button only appears for transactions at Estados 2 through 8.
-
-#### Step 2: Enter a Description
-
-In the modal that opens, describe the problem. This field is required.
-
-#### Step 4: Click "Registrar X1"
-
-The transaction will be marked as having an open problem (Estado 101).
-
-### How to Close a Problem (X2 Novedad cerrada)
-
-If a truck leaves without completing the process, use the X2 button.
-
-#### Step 1: Click " (X2) Cerrar"
-
-This button only appears for transactions at Estados 2 through 8.
-
-#### Step 2: Enter a Description
-
-Explain why the truck is being marked as abandoned.
-
-#### Step 3: Click "Registrar X2"
-
-The transaction will be closed as abandoned (Estado 102). This is a terminal state - no further changes are possible.
-
-### How to Select a Bascula (Weighing Scale)
-
-When a truck reaches the weighing station, operators must record which scale was used.
-
-#### Bascula de Entrada (Entry Weight)
-
-- Available at Estado 7 and above
-
-#### Bascula de Salida (Exit Weight)
-
-- Available at Estado 8 and above
-
-### How to Upload Documents
-
-Documents can be added or replaced in the **Adjuntos** section.
-
-#### Step 1: Find the Document Slot
-
-Seven document types are available:
-
-1. Orden de Despacho
-2. Remesa
-3. Manifiesto Electrónico
-4. Hoja Tiempos
-5. Conductor ID
-6. Pago Seguridad Social
-7. Otros Documentos (Other Documents)
-
-#### Step 2: Click "Subir documento"
-
-Click the upload button next to the document you want to add.
-
-#### Step 3: Select a File
-
-Choose a file from your computer. Allowed formats:
-
-- **PDF** (Preferred for documents)
-- **JPG, PNG, WebP** (For images)
-- **Maximum size**: 10 MB
-
-#### Step 4: Wait for Upload
-
-The file will upload and the button will change to show "Ver documento" (View Document).
-
-### How to View RNDC Preview
-
-For transactions at Estado 7 or above, you can preview the data that will be reported to the RNDC system.
-
-#### Step 1: Click "Preview RNDC Payload"
-
-This button appears in the Detail Sheet for qualifying transactions.
-
-#### Step 2: Review the Payload
-
-The modal shows:
-
-- **Sistema Enturnamiento ID**: The product code for RNDC
-- **RIEN Tabs**: Different report types based on estado (RIEN2 at Estado 7, RIEN1 at Estado 8)
-- **Validation**: Shows if any required fields are missing (in amber)
-- **Demo Mode Alert**: Indicates actual submission is disabled for testing
-
-#### Step 3: Close the Modal
-
-Click outside the modal or press the X button to close.
-
----
-
-## Reference
-
-### Frequently Asked Questions
-
-#### Why can't I change the estado?
-
-- **If you're a Client/Transport Company**: You can only modify records at Estados 0 and 1. Once a truck enters the port queue (Estado 2\+), only port staff can make changes.
-- **If you're an Operator**: Ensure you're logged in with the correct role. Contact your administrator if issues persist.
-
-#### Why don't I see the X1/X2 buttons?
-
-The X1 and X2 buttons only appear for transactions at Estados 2 through 8. If the transaction is at Estado 0, 1, 9, or already at X1/X2, these buttons are hidden.
-
-#### What happens if I select X1/X2 from the dropdown?
-
-The system will show an error message asking you to use the dedicated buttons instead. This ensures you provide the required description.
-
-#### Why can't I select Bascula?
-
-- **Bascula de Entrada**: Only appears at Estado 7 or above
-- **Bascula de Salida**: Only appears at Estado 8 or above
-- Only Operators and Administrators have permission to select basculas
-
-#### What file types can I upload?
-
-PDF, JPG, PNG, and WebP files up to 10 MB are accepted.
-
-#### Can I undo an estado change?
-
-Contact your administrator. Some transitions may be reversible depending on your permissions and business rules.
-
-### Troubleshooting
-
-- **If upload fails**: Check your file size (must be under 10MB) and format (PDF, JPG, PNG, WebP only)
-- **If estado change fails**: Contact your administrator - you may not have permission for that transition
-- **If the page doesn't load**: Refresh your browser and try again
-- **For other issues**: Contact system support
-
-### Important Notes
-
-- Changes are saved automatically - you don't need to click a "Save" button
-- All estado changes are logged with timestamps
-- Documents can be replaced by uploading a new file to the same slot
-- The Detail Sheet shows the most current data - close and reopen if changes were made elsewhere
+The Detail Sheet opens when you click any row in the Camiones table. It keeps you in-context while you review timestamps, participants, estado controls, documents, and RNDC reporting.
+
+The panel is organized into four columns:
+
+| Column | Contents |
+| --- | --- |
+| **Fechas y Horas** | Timestamps for each estado change |
+| **Cliente / Producto** | Customer name, product type, pile number |
+| **Empresa / Conductor / Camión** | Transport company, driver info, truck details |
+| **Documentos / PRC** | Attached documents and port control data |
+
+## How To
+
+<AccordionGroup>
+  <Accordion title="Open the Detail Sheet">
+    <Steps>
+      <Step title="Navigate to Camiones">
+        From the sidebar, click **Transporte → Camiones**.
+      </Step>
+
+      <Step title="Open a transaction row">
+        Click anywhere on the transaction row you want to inspect. The Detail Sheet slides in from the right.
+      </Step>
+
+      <Step title="Close when done">
+        Click the **X** in the top-right corner, or click outside the panel.
+      </Step>
+    </Steps>
+  </Accordion>
+
+  <Accordion title="Change the Estado (Status)">
+    <Note>
+      Only **Operators** and **Administrators** can change estados from Estado 2 onward. Transport company users (Clients) may only modify records at Estados 0 and 1.
+    </Note>
+
+    <Steps>
+      <Step title="Open the estado dropdown">
+        Click the colored estado badge at the top of the panel.
+      </Step>
+
+      <Step title="Select a new estado">
+        Choose from the available estados. The change saves automatically.
+      </Step>
+
+      <Step title="Confirm the update">
+        A success toast appears and the badge updates.
+      </Step>
+    </Steps>
+
+    <Warning>
+      **X1 and X2 cannot be selected from this dropdown.** They require their dedicated buttons to ensure a problem description is entered. Attempting to select them here triggers an error toast.
+    </Warning>
+  </Accordion>
+
+  <Accordion title="Report a Problem — (X1) Registrar Novedad">
+    <Info>
+      The X1 and X2 buttons are only visible for transactions at **Estados 2 through 8**.
+    </Info>
+
+    <Steps>
+      <Step title="Click '(X1) Registrar Novedad'">
+        The button appears in the detail panel for qualifying estados.
+      </Step>
+
+      <Step title="Enter a description">
+        Describe the problem. **This field is required.**
+      </Step>
+
+      <Step title="Submit X1">
+        Click **Registrar X1**. The transaction moves to **Estado X1 (Novedad Abierta)**.
+      </Step>
+    </Steps>
+  </Accordion>
+
+  <Accordion title="Close a Problem — (X2) Abandonar">
+    <Steps>
+      <Step title="Click '(X2) Abandonar'">
+        Available for transactions at Estados 2 through 8.
+      </Step>
+
+      <Step title="Enter a description">
+        Explain the reason. **This field is required.**
+      </Step>
+
+      <Step title="Submit X2">
+        Click **Registrar X2**. The transaction closes at **Estado X2 (Abandonado)**. This state is terminal — no further changes are possible.
+      </Step>
+    </Steps>
+  </Accordion>
+
+  <Accordion title="Select a Báscula (Weighing Scale)">
+    <Note>
+      Only **Operators** and **Administrators** can select básculas.
+    </Note>
+
+    When a truck reaches the weighing station, record which scale was used:
+
+    | Báscula | Available at |
+    | --- | --- |
+    | Báscula de Entrada | Estado 7 and above |
+    | Báscula de Salida | Estado 8 and above |
+  </Accordion>
+
+  <Accordion title="Upload Documents">
+    <Steps>
+      <Step title="Go to Adjuntos">
+        Scroll to the **Adjuntos** section.
+
+        Seven document slots are available:
+        - Orden de Despacho
+        - Remesa
+        - Manifiesto Electrónico
+        - Hoja Tiempos
+        - Conductor ID
+        - Pago Seguridad Social
+        - Otros Documentos
+      </Step>
+
+      <Step title="Choose a slot to upload">
+        Click **Subir documento** next to the slot you want to fill.
+      </Step>
+
+      <Step title="Select a file">
+        Accepted formats: **PDF**, **JPG**, **PNG**, **WebP** — maximum **10 MB**.
+      </Step>
+
+      <Step title="Confirm upload completed">
+        The button changes to **Ver documento** once the upload is complete.
+      </Step>
+    </Steps>
+
+    <Tip>
+      To replace a document, upload a new file to the same slot. All documents are currently optional.
+    </Tip>
+  </Accordion>
+
+  <Accordion title="Preview the RNDC Payload">
+    Available for transactions at Estado 7 or above.
+
+    <Steps>
+      <Step title="Open preview">
+        Click **Preview RNDC Payload**.
+      </Step>
+
+      <Step title="Review the modal">
+        Check:
+        - **Sistema Enturnamiento ID** — product code for RNDC
+        - **RIEN tabs** — RIEN2 at Estado 7, RIEN1 at Estado 8
+        - **Validation** — amber warnings for missing required fields
+        - **Demo Mode alert** — confirms actual submission is disabled
+      </Step>
+
+      <Step title="Close the modal">
+        Click outside or press X. Do not click **Verificar Conexion** in demo or staging environments.
+      </Step>
+    </Steps>
+  </Accordion>
+</AccordionGroup>
+
+## Role Reference
+
+<Danger>
+  <b>PENDING</b> — Screenshot update pending Role update.
+</Danger>
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Why can't I change the estado?">
+    If you're a **Client**, estado changes are locked after Estado 1 — port staff only from Estado 2 onward. If you're an **Operator**, verify your role in Settings or contact your administrator.
+  </Accordion>
+
+  <Accordion title="Why don't I see the X1/X2 buttons?">
+    These buttons only render for transactions at Estados 2–8. They are hidden at Estados 0, 1, 9, and when already at X1 or X2.
+  </Accordion>
+
+  <Accordion title="What happens if I try to select X1/X2 from the dropdown?">
+    The system rejects the selection and shows an error toast. Use the dedicated **(X1) Registrar Novedad** or **(X2) Abandonar** buttons instead — they ensure the required description is entered.
+  </Accordion>
+
+  <Accordion title="Why can't I select a báscula?">
+    Báscula de Entrada requires Estado 7 or above. Báscula de Salida requires Estado 8 or above. Only Operators and Admins have access.
+  </Accordion>
+
+  <Accordion title="What file types can I upload?">
+    PDF, JPG, PNG, and WebP — up to 10 MB per file.
+  </Accordion>
+
+  <Accordion title="Can I undo an estado change?">
+    Some transitions are reversible depending on your role and business rules. Contact your administrator.
+  </Accordion>
+
+  <Accordion title="What if my upload fails?">
+    Check that the file is under 10 MB and in an accepted format (PDF, JPG, PNG, WebP). If the issue persists, contact system support.
+  </Accordion>
+</AccordionGroup>
+
+<Info>
+  Changes are saved automatically — no Save button needed. All estado changes are logged with timestamps. Close and reopen the Detail Sheet to see changes made elsewhere.
+</Info>

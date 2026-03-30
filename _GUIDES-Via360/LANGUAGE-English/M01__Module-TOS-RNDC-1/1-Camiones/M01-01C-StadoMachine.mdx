@@ -3,7 +3,7 @@ title: "Estado Machine"
 description: "How every truck moves through the 13-state port workflow — from cargo generation to cycle close."
 ---
 
-## Overview
+## Feature Overview
 
 Every truck registered in MAM360 is always in exactly one of **13 estados**. The Estado Machine enforces which transitions are allowed, auto-assigns operational values like Turno numbers and timestamps, and restricts actions by role. Port operators never have to track state manually — the system handles it.
 
@@ -16,8 +16,8 @@ Every truck registered in MAM360 is always in exactly one of **13 estados**. The
 ## The 13 Estados
 
 | # | Estado | What Happens | Auto-Assigned | Valid Transitions | Role Access | Notes |
-| --- | --- | --- | --- | --- | --- | --- |
-| 0 | (En origen) Carga generada — lista para despacho | Load created via wizard | Load number (MILPA-XXX) \+ creation timestamp | → 1 | TBD | — |
+|---|--------|--------------|---------------|-------------------|-------------|-------|
+| 0 | (En origen) Carga generada — lista para despacho | Load created via wizard | Load number (MILPA-XXX) + creation timestamp | → 1 | TBD | — |
 | 1 | (En tránsito) Camino al terminal | Truck dispatched from origin | Turno number (CCC-PP##-####) | → 2 | TBD | — |
 | 2 | (En PRC) Lista de espera | Truck arrives at PRC | — | → 3 or X1 | TBD | — |
 | 3 | (En PRC) Preenturnado | Truck pre-queued at PRC | — | → 4 or X1 | TBD | — |
@@ -25,11 +25,11 @@ Every truck registered in MAM360 is always in exactly one of **13 estados**. The
 | 5 | (En PRC) Llamado al terminal | Truck called to port facility | — | → 6 or X1 | TBD | — |
 | 6 | (En IP) Portería — ingresado | Truck enters port gate | Timestamp | → 7 or X1 | TBD | — |
 | 7 | (En IP) Pesaje inicial — RIEN2 (CITA iniciada) | Initial weighing at entry scale | Timestamp | → 8 or X1 | TBD | 📋 **RNDC RIEN2 trigger.** Colombian transport regulation enforces a **53,300 kg weight limit** at the database level — cannot be bypassed via the UI. **RNDC submission is async** — the truck keeps moving regardless of government API response status |
-| 8 | (En IP) Pesaje final — RIEN1 (CITA cumplida) | Final weighing — unloading/loading complete | Buques inventory record \+ timestamp | → 9 or X1 | TBD | 📋 **RNDC RIEN1 trigger.** Buques inventory record created automatically at this estado |
-| 9 | (En IP) Portería — salió, ciclo cerrado | Truck exits port gate — full cycle recorded | Timestamp \+ **time differentials** auto-computed for every estado pair (0→1, 1→2 … 8→9) for KPI reporting | — | TBD | Terminal state — normal flow ends here |
-| X1 | X1 — Novedad abierta | Problem flagged — operation paused | Return estado stored automatically | → 2, 3, 4 (return) or X2 | TBD | 🔴 Modal requires: **description \+ return estado.** System stores the return point — no manual tracking needed. Cannot be cancelled — must be resolved or escalated to X2 |
+| 8 | (En IP) Pesaje final — RIEN1 (CITA cumplida) | Final weighing — unloading/loading complete | Buques inventory record + timestamp | → 9 or X1 | TBD | 📋 **RNDC RIEN1 trigger.** Buques inventory record created automatically at this estado |
+| 9 | (En IP) Portería — salió, ciclo cerrado | Truck exits port gate — full cycle recorded | Timestamp + **time differentials** auto-computed for every estado pair (0→1, 1→2 … 8→9) for KPI reporting | — | TBD | Terminal state — normal flow ends here |
+| X1 | X1 — Novedad abierta | Problem flagged — operation paused | Return estado stored automatically | → 2, 3, 4 (return) or X2 | TBD | 🔴 Modal requires: **description + return estado.** System stores the return point — no manual tracking needed. Cannot be cancelled — must be resolved or escalated to X2 |
 | X2 | X2 — Novedad cerrada | Problem escalated — terminal | — | None | TBD | 🔴 Terminal state. No further transitions possible |
-| X3 | Cancelado | Operation cancelled with confirmation | — | — | TBD | ⚠️ **Only available from estados 2, 3, and 4.** Once dispatched (estado 5\+), cancellation requires Admin — trucks inside the terminal cannot be un-dispatched |
+| X3 | Cancelado | Operation cancelled with confirmation | — | — | TBD | ⚠️ **Only available from estados 2, 3, and 4.** Once dispatched (estado 5+), cancellation requires Admin — trucks inside the terminal cannot be un-dispatched |
 
 <Note>
   **Role Access** is TBD pending the Access Architecture implementation (Types x2, Levels x4). See P1-334 for the full role matrix. Current working roles: Admin (full access), Operador (valid transitions only), Cliente (estados 0–1 only).
@@ -43,45 +43,67 @@ Every truck registered in MAM360 is always in exactly one of **13 estados**. The
 
 ## Special Notes
 
-### Estado 4 → 5 — ENVIAR Batch Dispatch
+<AccordionGroup>
+  <Accordion title="Estado 4 → 5 — ENVIAR Batch Dispatch">
+    Estado 4 trucks are dispatched in bulk via the **ENVIAR** button in the PRC view — not through the estado dropdown.
 
-Estado 4 trucks are dispatched in bulk via the **ENVIAR** button in the PRC view — not through the estado dropdown.
+    <Steps>
+      <Step title="Open the Estado 4 pile">
+        In the PRC view, open the pile with trucks in **Estado 4**.
+      </Step>
+      <Step title="Select trucks">
+        Select the trucks to dispatch.
+      </Step>
+      <Step title="Dispatch">
+        Click **ENVIAR**.
+      </Step>
+      <Step title="Review confirmation">
+        A confirmation modal appears with the full truck list.
+      </Step>
+      <Step title="Confirm">
+        Click **Continuar / Confirmar** — all selected trucks move to **Estado 5** and leave the PRC queue.
+      </Step>
+    </Steps>
 
-1. In the PRC view, open the pile with trucks in **Estado 4**.
-2. Select the trucks to dispatch.
-3. Click **ENVIAR**.
-4. A confirmation modal appears with the full truck list.
-5. Click **Continuar / Confirmar** — all selected trucks move to **Estado 5** and leave the PRC queue.
+    <Warning>
+      ENVIAR is irreversible from the operator view. If dispatched in error, an Admin must correct the estado from the Camiones table.
+    </Warning>
+  </Accordion>
 
-<Warning>
-  ENVIAR is irreversible from the operator view. If dispatched in error, an Admin must correct the estado from the Camiones table.
-</Warning>
+  <Accordion title="Estado X1 — Novedad Abierta (Problem Reporting)">
+    When a truck cannot proceed normally, flag it as X1 from the PRC pile detail.
 
----
+    <Steps>
+      <Step title="Set estado to X1">
+        Change the truck's estado to **X1 — Novedad abierta**.
+      </Step>
+      <Step title="Describe and set return">
+        A modal opens with two required fields:
+        - **Descripción del problema** — what went wrong.
+        - **Estado de retorno** — where the truck resumes when resolved.
+      </Step>
+      <Step title="Submit">
+        Submit. The truck is flagged and the return point is stored automatically.
+      </Step>
+      <Step title="Resolve or return">
+        To resolve: change the estado to 2, 3, or 4 (as set in step 2).
+      </Step>
+      <Step title="Escalate if needed">
+        If unresolvable, escalate to **X2 — Novedad cerrada** — this is terminal.
+      </Step>
+    </Steps>
 
-### Estado X1 — Novedad Abierta (Problem Reporting)
-
-When a truck cannot proceed normally, flag it as X1 from the PRC pile detail.
-
-1. Change the truck's estado to **X1 — Novedad abierta**.
-2. A modal opens with two required fields:
-   - **Descripción del problema** — what went wrong.
-   - **Estado de retorno** — where the truck resumes when resolved.
-3. Submit. The truck is flagged and the return point is stored automatically.
-4. To resolve: change the estado to 2, 3, or 4 (as set in step 2).
-5. If unresolvable, escalate to **X2 — Novedad cerrada** — this is terminal.
-
-<Note>
-  Trucks in X1 or X2 cannot be cancelled. Cancellation is only available from estados 2, 3, and 4.
-</Note>
+    <Note>
+      Trucks in X1 or X2 cannot be cancelled. Cancellation is only available from estados 2, 3, and 4.
+    </Note>
+  </Accordion>
+</AccordionGroup>
 
 ---
 
 ## Architecture Notes
 
 | Behavior | Reason |
-| --- | --- |
+|---|---|
 | Default role = Cliente | Protects port operations by default. New users can only interact with estados 0–1 until an Admin explicitly grants higher access. |
 | Time differentials auto-computed | Database triggers calculate elapsed time between every estado pair for KPI reporting. No manual entry required. |
-
----

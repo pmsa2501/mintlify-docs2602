@@ -1,3 +1,128 @@
 ---
 title: "Filter"
+description: "Filter and search Camiones transactions by field values and text search to quickly find specific records."
 ---
+
+## Feature Overview
+The Camiones table supports filtering and text search across truck transaction records. Use filters to narrow results by client, product, estado, or transport company, and use the search box to find matching records as you type.
+
+## How to Filter Records
+
+<AccordionGroup>
+  <Accordion title="Open the Filter Menu">
+    <Steps>
+      <Step title="Open Filtrar">
+        Click the **Filtrar** button above the table.
+      </Step>
+
+      <Step title="Review filter options">
+        A menu will appear showing the available filter fields.
+      </Step>
+    </Steps>
+  </Accordion>
+
+  <Accordion title="Select a Filter Field">
+    <Steps>
+      <Step title="Pick a field">
+        Click one of the filter fields (for example, **Cliente**).
+      </Step>
+
+      <Step title="Confirm chip appears">
+        A chip will appear below the search bar showing your selected filter.
+      </Step>
+    </Steps>
+
+    <Note>
+      The chip displays a count of how many values are active for that filter. For example, **Cliente (2)** means 2 clients are currently selected.
+    </Note>
+  </Accordion>
+
+  <Accordion title="Configure the Filter">
+    <Steps>
+      <Step title="Open configuration">
+        Click the filter chip to open the configuration panel.
+      </Step>
+
+      <Step title="Select values">
+        Check the values you want to filter by (for example, select one or more clients).
+      </Step>
+
+      <Step title="Verify results update">
+        The table updates automatically to show matching records.
+      </Step>
+    </Steps>
+  </Accordion>
+
+  <Accordion title="Add More Filters (Optional)">
+    You can add multiple filters at once.
+
+    <Note>
+      Multiple filters combine with AND logic — records must match all active filters to appear.
+    </Note>
+  </Accordion>
+
+  <Accordion title="Remove Filters">
+    <Steps>
+      <Step title="Remove one filter">
+        Click the **X** on a filter chip.
+      </Step>
+
+      <Step title="Clear all filters">
+        Use the clear option (for example, **Limpiar filtros**) to reset all filters.
+      </Step>
+    </Steps>
+  </Accordion>
+</AccordionGroup>
+
+## How to Search Records
+
+<AccordionGroup>
+  <Accordion title="Use the Search Box">
+    Type your search text in the search box at the top of the table.
+  </Accordion>
+
+  <Accordion title="View Results">
+    The table filters automatically as you type, showing only records that match your search.
+
+    <Note>
+      TODO: Confirm with Noor the exact number of fields covered by search (spec mentions 8, including plate numbers).
+    </Note>
+  </Accordion>
+</AccordionGroup>
+
+## Frequently Asked Questions
+
+<AccordionGroup>
+  <Accordion title="How many records can I see at once?">
+    The table shows 10 records per page. Use the pagination controls at the bottom to navigate between pages.
+  </Accordion>
+
+  <Accordion title="Why did my filters disappear?">
+    Filters reset when you navigate to another page. This is normal behavior — reapply your filters when you return.
+  </Accordion>
+
+  <Accordion title="Can I combine search and filters?">
+    Yes. You can use the search box and filters at the same time. For example, filter by "Estado = 2" and search for a specific plate number.
+  </Accordion>
+
+  <Accordion title="What does the number in parentheses on a filter chip mean?">
+    The number shows how many values are selected for that filter. For example, "Cliente (2)" means you have 2 clients selected.
+  </Accordion>
+
+  <Accordion title="Why are there no results?">
+    If you see "No se encontraron resultados" (No results found), your search/filter combination doesn't match any records. Try:
+    - Removing some filters
+    - Checking your spelling in the search box
+    - Selecting different filter values
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+- If the table shows no data unexpectedly, try refreshing the page.
+- If filters seem to not work, click **Limpiar filtros** to reset all filters.
+- If you need help, contact your system administrator.
+
+#### Important Notes
+- All users can view all transaction records.
+- Filters help you find specific records faster.
+- Export functionality ("Descargar") uses a date range, not your current filters.

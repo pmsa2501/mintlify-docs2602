@@ -1,24 +1,29 @@
 ---
 title: "Authentication"
+description: "Learn how to access the platform for the first time or sign back in to your account."
 ---
 
-Learn how to access the platform for the first time or sign back in to your account.
+## Feature Overview
+
+Authentication lets users access the platform either by entering Demo Mode (no account required) or by signing in to an existing account. New users may complete a short onboarding flow after the first successful sign-in.
 
 ---
 
-# Demo mode (no account required)
+## Demo mode (no account required)
 
-Demo mode is available for users who don’t have an account or who want to explore the portal for training purposes.
+Demo mode is available for users who don't have an account or who want to explore the portal for training purposes.
 
 - Open the Demo Mode URL: `PUT_DEMO_URL_HERE`
 
 ---
 
-# Sign In (account required)
+## Sign In (account required)
 
 Navigate to the login page. You will see the following screen:
 
-**¡Bienvenido!**   _Seleccione cómo desea ingresar_
+**¡Bienvenido!**
+
+__Seleccione cómo desea ingresar__
 
 Two options are available:
 
@@ -32,85 +37,141 @@ Two options are available:
 <Danger>
   <b>PENDING</b>
 
-  Update these images with actual app after logo is udpated.
+   Update these images with actual app after logo is updated.
 </Danger>
-
----
 
 ### Option 1: Sign in with Google
 
-1. Click **Ingresar con Google**.
-2. A Google authentication window will open. Select your account and confirm.
-3. You will be redirected to your dashboard automatically.
+<AccordionGroup>
+  <Accordion title="Steps">
+    <Steps>
+      <Step title="Start Google sign-in">
+        Click **Ingresar con Google**.
+      </Step>
+      <Step title="Choose your Google account">
+        A Google authentication window will open. Select your account and confirm.
+      </Step>
+      <Step title="Arrive at dashboard">
+        You will be redirected to your dashboard automatically.
+      </Step>
+    </Steps>
 
-\> If this is your first time, you will go through a short onboarding flow before reaching the dashboard.
-
----
+    _If this is your first time, you will go through a short onboarding flow before reaching the dashboard._
+  </Accordion>
+</AccordionGroup>
 
 ### Option 2: Sign in with Email
 
-#### Step 1 — Enter your email
+<AccordionGroup>
+  <Accordion title="Step 1 — Enter your email">
+    <Steps>
+      <Step title="Choose email sign-in">
+        Click **Ingresar con correo electrónico**.
+      </Step>
+      <Step title="Enter email">
+        On the next screen, enter your email address in the **Correo electrónico** field.
 
-1. Click **Ingresar con correo electrónico**.
-2. On the next screen, enter your email address in the **Correo electrónico** field.
-   <Frame>
-     ![2026 03 24 005395](/images/2026-03-24-005395-2.png)
-   </Frame>
-3. Click **Continuar**.
+        <Frame>
+          ![2026 03 24 005395](/images/2026-03-24-005395-2.png)
+        </Frame>
+      </Step>
+      <Step title="Continue">
+        Click **Continuar**.
+      </Step>
+    </Steps>
+  </Accordion>
 
-#### Step 2 — Verify your email
+  <Accordion title="Step 2 — Verify your email">
+    The platform will send a 6-digit verification code to your email.
 
-The platform will send a 6-digit verification code to your email.
+    <Steps>
+      <Step title="Find the code">
+        Check your inbox for the code.
+      </Step>
+      <Step title="Enter the code">
+        On the **Revise su correo** screen, enter the code in the 6-box field.
 
-1. Check your inbox for the code.
-2. On the **Revise su correo** screen, enter the code in the 6-box field.
-   <Frame>
-     ![2026 03 24 005396](/images/2026-03-24-005396-1.png)
-   </Frame>
+        <Frame>
+          ![2026 03 24 005396](/images/2026-03-24-005396-1.png)
+        </Frame>
+      </Step>
+    </Steps>
 
-\> Did not receive the code? Click **Reenviar código** to request a new one.
+    _Did not receive the code? Click **Reenviar código** to request a new one._
+  </Accordion>
 
-#### Step 3 — Enter your phone number
+  <Accordion title="Step 3 — Enter your phone number">
+    <Steps>
+      <Step title="Enter phone number">
+        On the **Teléfono móvil** screen, enter your Colombian mobile number.
+      </Step>
+      <Step title="Next">
+        Click **Siguiente**.
 
-1. On the **Teléfono móvil** screen, enter your Colombian mobile number.
-2. Click **Siguiente**.
+        <Frame>
+          ![2026 03 24 005391](/images/2026-03-24-005391.png)
+        </Frame>
+      </Step>
+    </Steps>
 
-<Frame>
-  ![2026 03 24 005391](/images/2026-03-24-005391.png)
-</Frame>
+    _Note_: Only Colombian phone numbers with country code \+57 are accepted at this time.
+  </Accordion>
 
-_Note_: Only Colombian phone numbers with country code \+57 are accepted at this time.
+  <Accordion title="Step 4 — Confirm your phone number">
+    A verification code will be sent to your phone via **WhatsApp**.
 
-#### Step 4 — Confirm your phone number
+    <Steps>
+      <Step title="Get the WhatsApp code">
+        Open WhatsApp and find the message with your code.
+      </Step>
+      <Step title="Enter the code">
+        On the **Confirmación del número de teléfono** screen, enter the 4-digit code.
 
-A verification code will be sent to your phone via **WhatsApp**.
+        <Frame>
+          ![2026 03 24 005392](/images/2026-03-24-005392-1.png)
+        </Frame>
+      </Step>
+    </Steps>
 
-1. Open WhatsApp and find the message with your code.
-2. On the **Confirmación del número de teléfono** screen, enter the 4-digit code.
-   <Frame>
-     ![2026 03 24 005392](/images/2026-03-24-005392-1.png)
-   </Frame>
+    _Did not receive the code? Tap **Reenviar código**._
+  </Accordion>
 
-\> Did not receive the code? Tap **Reenviar código**.
+  <Accordion title="Step 5 — Enter your identity information">
+    <Steps>
+      <Step title="Enter ID number">
+        Enter your **Número de Identificación (cédula)** — no dots, for example: `1234567890`.
+      </Step>
+      <Step title="Enter name">
+        Enter your **Primer Nombre** (first name) and **Apellido** (last name).
 
-#### Step 5 — Enter your identity information
+        <Frame>
+          ![2026 03 24 005393](/images/2026-03-24-005393.png)
+        </Frame>
+      </Step>
+      <Step title="Next">
+        Click **Siguiente**.
+      </Step>
+    </Steps>
+  </Accordion>
 
-1. Enter your **Número de Identificación (cédula)** — no dots, for example: `1234567890`.
-2. Enter your **Primer Nombre** (first name) and **Apellido** (last name).
-   <Frame>
-     ![2026 03 24 005393](/images/2026-03-24-005393.png)
-   </Frame>
-3. Click **Siguiente**.
+  <Accordion title="Step 6 — Notification preferences">
+    <Steps>
+      <Step title="Choose notification setting">
+        On the **Activar Notificaciones** screen, choose your preference:
 
-#### Step 6 — Notification preferences
+        - Click **Aceptar** to enable real-time alerts for orders and updates.
+        - Click **Cancelar** to skip for now.
 
-1. On the **Activar Notificaciones** screen, choose your preference:
-   - Click **Aceptar** to enable real-time alerts for orders and updates.
-   - Click **Cancelar** to skip for now.
-     <Frame>
-       ![2026 03 24 005394](/images/2026-03-24-005394.png)
-     </Frame>
-2. You will be taken to your dashboard.
+        <Frame>
+          ![2026 03 24 005394](/images/2026-03-24-005394.png)
+        </Frame>
+      </Step>
+      <Step title="Finish">
+        You will be taken to your dashboard.
+      </Step>
+    </Steps>
+  </Accordion>
+</AccordionGroup>
 
 ---
 
