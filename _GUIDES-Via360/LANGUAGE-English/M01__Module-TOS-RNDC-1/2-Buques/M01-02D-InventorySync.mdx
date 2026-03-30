@@ -1,0 +1,142 @@
+---
+title: "Buques Inventory Sync"
+---
+
+How cargo inventory records are automatically created when trucks complete weighing, and how to view, filter, and manage them.
+
+## Feature Overview
+
+When a truck completes its final weighing (Estado 8), the system automatically creates a "Carga adicionada" record in the Buques inventory table. Each record is linked back to the originating truck transaction, providing full traceability from truck to inventory.
+
+Operators and administrators can also manually create dispatch entries ("Buque despachado") to record cargo loaded onto ships.
+
+<Note>Only **Admin** and **Operator** roles can create manual dispatch entries. Clients can view inventory records but cannot create them.</Note>
+
+---
+
+## How Automatic Inventory Sync Works
+
+<AccordionGroup>
+  <Accordion title="Step 1 — Truck Completes Final Weighing (Step 1 of 3)">
+    When a truck reaches **Estado 8 (Pesaje final)** in the Camiones module, the system automatically creates a new inventory record in Buques with:
+
+    - **Tipo movimiento:** "Carga adicionada"
+    - **Cliente and Producto:** Copied automatically from the truck record
+    - **camion_id:** Links back to the originating truck transaction
+
+    <Tip>The ship name (motonave) is intentionally left blank on auto-synced records. It gets assigned later when the cargo is dispatched to a ship.</Tip>
+  </Accordion>
+  <Accordion title="Step 2 — View the New Record in Buques (Step 2 of 3)">
+    <Steps>
+      <Step>
+        Navigate to **Transporte → Buques** (`/dashboard/transporte/buques`).
+      </Step>
+      <Step>
+        Look at the top of the inventory table for the newest entry.
+      </Step>
+      <Step>
+        Confirm the record shows **Tipo movimiento = "Carga adicionada"** and matches the truck's cliente and producto.
+      </Step>
+    </Steps>
+  </Accordion>
+  <Accordion title="Step 3 — Verify Traceability (Step 3 of 3)">
+    <Steps>
+      <Step>
+        Click **"Ver detalles"** on the inventory record.
+      </Step>
+      <Step>
+        In the detail panel, locate the **camion_id** field — this UUID links back to the truck transaction for auditing purposes.
+      </Step>
+    </Steps>
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## How to Filter Inventory Records
+
+<AccordionGroup>
+  <Accordion title="Step 1 — Open the Filter Panel (Step 1 of 2)">
+    <Steps>
+      <Step>
+        Navigate to the Buques inventory table.
+      </Step>
+      <Step>
+        Click the **"Filtrar"** button to open the filter panel.
+      </Step>
+    </Steps>
+  </Accordion>
+  <Accordion title="Step 2 — Filter by Tipo Movimiento (Step 2 of 2)">
+    Select **Tipo movimiento** from the filter options to isolate records by type:
+
+    | Tipo Movimiento | Meaning |
+    |---|---|
+    | Carga adicionada | Auto-created when a truck reaches Estado 8 |
+    | Buque despachado | Manually created when cargo is dispatched to a ship |
+    | Ajuste | Adjustment or cancellation (shows negative tonnage) |
+    | Carga despachada | Cargo dispatched record |
+
+    <Tip>You can also use the **search bar** to quickly filter — for example, typing "despachado" will show only dispatch records.</Tip>
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## How to Create a Manual Dispatch
+
+<AccordionGroup>
+  <Accordion title="Step 1 — Open the Dispatch Form (Step 1 of 2)">
+    <Steps>
+      <Step>
+        Navigate to **Transporte → Buques**.
+      </Step>
+      <Step>
+        Click the **"Generar carga"** button.
+      </Step>
+    </Steps>
+
+    <Note>The "Generar carga" button is only visible to **Admin** and **Operator** roles.</Note>
+  </Accordion>
+  <Accordion title="Step 2 — Complete the Dispatch Entry (Step 2 of 2)">
+    Fill in the required fields for the "Buque despachado" entry, including the ship name (motonave), cantidad, and other relevant details. Submit the form to create the record.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Frequently Asked Questions
+
+<AccordionGroup>
+  <Accordion title="What is the difference between 'Carga adicionada' and 'Buque despachado'?">
+    **Carga adicionada** records are created automatically when a truck completes weighing (Estado 8). They represent cargo added to inventory. **Buque despachado** records are created manually by operators when cargo is dispatched to a ship.
+  </Accordion>
+  <Accordion title="Why is the ship name blank on some records?">
+    Auto-synced "Carga adicionada" records do not have a ship name because the cargo has not yet been assigned to a ship. The ship name is set when an operator creates a "Buque despachado" dispatch entry.
+  </Accordion>
+  <Accordion title="Why can't I see the 'Generar carga' button?">
+    The "Generar carga" button is only available to Admin and Operator roles. If you are logged in as a Client, you can view inventory records but cannot create manual dispatch entries.
+  </Accordion>
+  <Accordion title="What happens if a truck goes back from Estado 8 to Estado 7 and then to Estado 8 again?">
+    A new "Carga adicionada" record will be created each time the truck reaches Estado 8. There is currently no duplicate prevention for this scenario.
+  </Accordion>
+  <Accordion title="How do cancellations or adjustments appear?">
+    Adjustments appear as "Ajuste" records with negative tonnage (e.g., -1,500 kg). This restores the corresponding amount to the inventory balance.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Important Notes
+
+<Tip>Each auto-synced record includes a **camion_id** that traces back to the originating truck transaction — use "Ver detalles" to verify this link at any time.</Tip>
+
+- Auto-sync happens immediately when a truck reaches Estado 8 — no manual action is required.
+- The **cliente** and **producto** fields are inherited automatically from the truck record.
+- Only Admin and Operator roles can create manual dispatch entries via "Generar carga."
+- The inventory balance and dedicated inventory dashboard (`/dashboard/inventario`) are planned future enhancements.
+
+---
+
+## Need Help?
+
+Contact your system administrator or reach out to the support team for assistance.
