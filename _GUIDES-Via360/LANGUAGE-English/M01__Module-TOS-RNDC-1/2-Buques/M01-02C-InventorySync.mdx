@@ -1,3 +1,189 @@
 ---
-title: "Inventory Sync"
+title: "Buques Table Filters"
+description: "Learn how to search, filter, view details, and download inventory movement records in the Buques table."
 ---
+
+---
+
+## Feature Overview
+
+The Buques table shows all inventory movements at the port, including cargo that arrived via trucks, cargo dispatched on ships, and manual adjustments. Use it to track what inventory came in, what went out, and quickly find records by client, product, ship, or movement type.
+
+<Note>
+This table is read-only. Only authorized users (Operator/Admin) can create dispatch or adjustment entries through **Generar carga**.
+</Note>
+
+---
+
+## How to Use
+
+<AccordionGroup>
+  <Accordion title="Search and Filter Records">
+    <Steps>
+      <Step>
+        **Search by text**
+
+        Use the search box to find records by:
+        - Client name
+        - Product name
+        - Ship name
+        - Movement type
+      </Step>
+
+      <Step>
+        **Add a filter**
+
+        1. Click **Filtrar**
+        2. Select a field:
+           - **Cliente** (client company)
+           - **Producto** (product type)
+           - **Tipo movimiento** (movement type)
+           - **Buque** (ship name)
+        3. Confirm a filter chip appears below the search bar
+      </Step>
+
+      <Step>
+        **Set filter conditions**
+
+        1. Click the filter chip
+        2. Choose an operator (select a value or use **is empty** when available)
+        3. Select one or more values
+        4. Click **Apply** (or click outside the panel to close)
+      </Step>
+
+      <Step>
+        **Combine multiple filters**
+
+        - Add more filters by clicking **Filtrar** again
+        - Filters combine with AND logic (a record must match ALL filters)
+        - Remove a filter by clicking the **X** on its chip
+
+        <Note>
+        Filters reset when you navigate away from the page.
+        </Note>
+      </Step>
+    </Steps>
+  </Accordion>
+
+  <Accordion title="View Record Details">
+    <Steps>
+      <Step>
+        **Open the detail panel**
+
+        Click any table row to open the detail panel on the right side.
+      </Step>
+
+      <Step>
+        **Review record information**
+
+        The detail panel shows:
+        - Client and product information
+        - Ship and weight (kg)
+        - Movement type and timestamp
+        - **Camion asociado** (only for **Carga adicionada**) — the truck that delivered the cargo
+      </Step>
+
+      <Step>
+        **Close the detail panel**
+
+        Close the panel by clicking the **X** button (or click outside the panel).
+      </Step>
+    </Steps>
+  </Accordion>
+
+  <Accordion title="Download Data">
+    <Steps>
+      <Step>
+        **Open the download dialog**
+
+        Click **Descargar** to open the download dialog.
+      </Step>
+
+      <Step>
+        **Select date range**
+
+        - Choose a start and end date
+        - Only records inside this range will be exported
+        - Future dates are not selectable
+      </Step>
+
+      <Step>
+        **Choose file format**
+
+        Select one format:
+        - **Excel (.xlsx)** — for spreadsheet software
+        - **CSV (.csv)** — for data import/export
+      </Step>
+
+      <Step>
+        **Select columns**
+
+        1. Click **Columnas (X seleccionadas)** to expand
+        2. Check/uncheck columns to include
+
+        Column groups may include:
+        - Informacion General
+        - Detalles
+        - Fechas
+      </Step>
+
+      <Step>
+        **Download**
+
+        Click **Descargar** to save the file.
+
+        <Note>
+        The download includes all records matching your current filters AND your selected date range.
+        </Note>
+      </Step>
+    </Steps>
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Frequently Asked Questions
+
+<AccordionGroup>
+  <Accordion title="How do 'Carga adicionada' records get created?">
+    These records are automatically created when a truck completes weighing (Estado 8). The system copies the weight and product information from the truck record.
+  </Accordion>
+
+  <Accordion title="Can I edit records in the Buques table?">
+    No. The Buques table is read-only. To modify inventory, authorized users must create new entries (for example, **Buque despachado** or **Ajuste**) through **Generar carga**.
+  </Accordion>
+
+  <Accordion title="Why do some records show 'Camion asociado' and others don't?">
+    Only **Carga adicionada** records (auto-created from trucks) include a linked truck (**Camion asociado**). Manual entries like **Buque despachado** and **Ajuste** do not link to a specific truck.
+  </Accordion>
+
+  <Accordion title="Why can't I create a dispatch entry?">
+    Only authorized users (Operator/Admin) can create dispatch and adjustment entries. If you are logged in as a Client, you can only view records.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Filters show no results">
+    Try removing filters one by one, or clear the search text and re-apply filters.
+  </Accordion>
+
+  <Accordion title="Download is empty">
+    Check your date range. Records may fall outside the selected period.
+  </Accordion>
+
+  <Accordion title="'Generar carga' shows an error">
+    You may not have permission. Contact an authorized user.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Important Notes
+
+- Filters reset when you navigate away from the page
+- Download includes all records that match your current filters and your selected date range
+- Records cannot be deleted; corrections should be made by creating a new **Ajuste** entry (authorized users only)
