@@ -1,180 +1,229 @@
 ---
-title: "Download"
+title: "Download & Export"
+description: "Export operational data from Camiones and Buques tables in multiple formats, with local download or Box Drive delivery."
 ---
 
-Learn how to access the platform for the first time or sign back in to your account.
+## Feature Overview
 
----
+The Download & Export system lets authorized users export data from the **Camiones** and **Buques** tables. Four export formats are available — Excel (XLSX), CSV, and two RNDC regulatory formats (REIN1 and REIN2). Files can be downloaded locally or sent directly to Box Drive.
 
-# Demo mode (no account required)
-
-Demo mode is available for users who don't have an account or who want to explore the portal for training purposes.
-
-- Open the Demo Mode URL: `PUT_DEMO_URL_HERE`
+The export dialog includes date range filtering, customizable column selection with grouped toggles, and automatic future-date prevention. RNDC formats use fixed columns per Colombian government specification.
 
 ---
 
-# Sign In (account required)
+## Export Formats
 
-Navigate to the login page. You will see the following screen:
+| Format | Purpose | Available For |
+| --- | --- | --- |
+| Excel (.XLSX) | Spreadsheet analysis, internal reporting | Camiones \+ Buques |
+| .CSV | Data import, third-party systems | Camiones \+ Buques |
+| .CSV (RNDC REIN2) | Regulatory submission — appointment/shift assignment (9 fixed columns) | Camiones only |
+| .CSV (RNDC REIN1) | Regulatory submission — full entry/exit record (16 fixed columns) | Camiones only |
 
-**¡Bienvenido!**
-
-*_Seleccione cómo desea ingresar_*
-
-Two options are available:
-
-- **Ingresar con Google**
-- **Ingresar con correo electrónico**
-
-<Frame>
-  ![2026 03 24 005390](/images/2026-03-24-005390-1.png)
-</Frame>
-
-<Danger>
-  <b>PENDING</b>
-  Update these images with actual app after logo is updated.
-</Danger>
+<Note>
+  RNDC formats (REIN1 and REIN2) are only available for the Camiones table.
+</Note>
 
 ---
 
-### Option 1: Sign in with Google
+## How to Export from Camiones
 
 <AccordionGroup>
-  <Accordion title="Steps">
-    <Steps>
-      <Step>
-        Click **Ingresar con Google**.
-      </Step>
-      <Step>
-        A Google authentication window will open. Select your account and confirm.
-      </Step>
-      <Step>
-        You will be redirected to your dashboard automatically.
-      </Step>
-    </Steps>
+  <Accordion title="Step 1 — Open the Export Dialog (Step 1 of 7)">
+    Navigate to the **Camiones** table using the sidebar, then click the **Descargar** button. A modal titled "Exportar Reporte" will appear.
 
-    *If this is your first time, you will go through a short onboarding flow before reaching the dashboard.*
+    <Frame>
+      ![2026 03 29 005636 1](/images/2026-03-29-005636-1.png)
+    </Frame>
+  </Accordion>
+
+  <Accordion title="Step 2 — Select a Date Range (Step 2 of 7)">
+    Use the calendar to pick a start and end date. Future dates are automatically grayed out to prevent empty exports.
+
+    <Frame>
+      ![XX9 2026 03 29 005637](/images/_XX92026-03-29-005637.png)
+    </Frame>
+
+    <Tip>
+      Pick a range with known data — for example, Jan 1–19, 2026 — to verify your first export.
+    </Tip>
+
+    <Note>
+      When selecting the start date, double-click on the desired day. This clears any previous date selection and sets a fresh starting point for your range
+    </Note>
+  </Accordion>
+
+  <Accordion title="Step 3 — Choose an Export Format (Step 3 of 7)">
+    Select one of the four format options:
+
+    - **Excel** — XLSX spreadsheet
+    - **CSV** — comma-separated values
+    - **RNDC REIN2** — 9 fixed regulatory columns
+    - **RNDC REIN1** — 16 fixed regulatory columns
+
+    <Frame>
+      ![XX5 2026 03 29 005637 4](/images/_XX52026-03-29-005637-4.png)
+    </Frame>
+
+    <Note>
+      When you select an RNDC format, the column selector disappears because those columns are fixed by government specification.
+    </Note>
+  </Accordion>
+
+  <Accordion title="Step 4 — Choose a Destination (Step 4 of 7)">
+    Select where the file should be delivered:
+
+    - **Box Drive** — uploads directly to the configured Box folder
+    - **Descarga local** — standard browser download
+
+    <Frame>
+      ![XX6 2026 03 29 005637 5](/images/_XX62026-03-29-005637-5-1.png)
+    </Frame>
+
+    <Note>
+      Files exported to Box Drive are for internal use only. External users cannot access them unless an internal team member shares a direct link..
+    </Note>
+  </Accordion>
+
+  <Accordion title="Step 5 — Customize Columns (Step 5 of 7)">
+    For Excel and CSV exports, expand the **Columnas** section to see grouped checkboxes. Each group has a toggle to select or deselect all columns in that category.
+
+    The default selection includes 9 columns. Add or remove groups (e.g., toggle "Pesos" to include weight columns) as needed.
+
+    <Frame>
+      ![XX7 2026 03 29 005637 6](/images/_XX72026-03-29-005637-6.png)
+    </Frame>
+
+  </Accordion>
+
+  <Accordion title="Step 6 — Submit the Export (Step 6 of 7)">
+    Click the submit button. If you chose Box Drive, a toast notification confirms the upload. If you chose local download, the file downloads to your browser.
+
+    <Frame>
+      ![XX8 2026 03 29 005637 7](/images/_XX82026-03-29-005637-7.png)
+    </Frame>
+
+  </Accordion>
+
+  <Accordion title="Step 7 — Verify the File (Step 7 of 7)">
+    Check the downloaded or uploaded file. Files are named with a date prefix: `{YYYY-MM-DD}-camiones.{format}`.
+
+    - URL for downloads for Camiones table: [https://pmsa.app.box.com/folder/357306486195](https://pmsa.app.box.com/folder/357306486195)
+
+    <Warning>
+      Box Drive exports are currently limited to one file per day per table. If you need to re-export on the same day, use local download instead.
+    </Warning>
   </Accordion>
 </AccordionGroup>
 
 ---
 
-### Option 2: Sign in with Email
+## How to Export RNDC Files
 
 <AccordionGroup>
-  <Accordion title="Step 1 — Enter your email">
-    <Steps>
-      <Step>
-        Click **Ingresar con correo electrónico**.
-      </Step>
-      <Step>
-        On the next screen, enter your email address in the **Correo electrónico** field.
-
-        <Frame>
-          ![2026 03 24 005395](/images/2026-03-24-005395-2.png)
-        </Frame>
-      </Step>
-      <Step>
-        Click **Continuar**.
-      </Step>
-    </Steps>
+  <Accordion title="Step 1 — Open the Export Dialog (Step 1 of 3)">
+    From the Camiones table, click **Descargar** to open the export modal.
   </Accordion>
 
-  <Accordion title="Step 2 — Verify your email">
-    The platform will send a 6-digit verification code to your email.
-
-    <Steps>
-      <Step>
-        Check your inbox for the code.
-      </Step>
-      <Step>
-        On the **Revise su correo** screen, enter the code in the 6-box field.
-
-        <Frame>
-          ![2026 03 24 005396](/images/2026-03-24-005396-1.png)
-        </Frame>
-      </Step>
-    </Steps>
-
-    *Did not receive the code? Click **Reenviar código** to request a new one.*
+  <Accordion title="Step 2 — Select RNDC Format (Step 2 of 3)">
+    Choose either **RNDC REIN2** (9 columns) or **RNDC REIN1** (16 columns). The column selector will disappear — RNDC columns are fixed per government specification.
   </Accordion>
 
-  <Accordion title="Step 3 — Enter your phone number">
-    <Steps>
-      <Step>
-        On the **Teléfono móvil** screen, enter your Colombian mobile number.
-      </Step>
-      <Step>
-        Click **Siguiente**.
+  <Accordion title="Step 3 — Download or Send to Box (Step 3 of 3)">
+    Select your destination and submit. The file generates as a TAB-separated flat file ready for upload to the RNDC portal.
 
-        <Frame>
-          ![2026 03 24 005391](/images/2026-03-24-005391.png)
-        </Frame>
-      </Step>
-    </Steps>
+    - URL for downloads for Camiones table: [https://pmsa.app.box.com/folder/357306486195](https://pmsa.app.box.com/folder/357306486195)
 
-    _Note_: Only Colombian phone numbers with country code +57 are accepted at this time.
-  </Accordion>
-
-  <Accordion title="Step 4 — Confirm your phone number">
-    A verification code will be sent to your phone via **WhatsApp**.
-
-    <Steps>
-      <Step>
-        Open WhatsApp and find the message with your code.
-      </Step>
-      <Step>
-        On the **Confirmación del número de teléfono** screen, enter the 4-digit code.
-
-        <Frame>
-          ![2026 03 24 005392](/images/2026-03-24-005392-1.png)
-        </Frame>
-      </Step>
-    </Steps>
-
-    *Did not receive the code? Tap **Reenviar código**.*
-  </Accordion>
-
-  <Accordion title="Step 5 — Enter your identity information">
-    <Steps>
-      <Step>
-        Enter your **Número de Identificación (cédula)** — no dots, for example: `1234567890`.
-      </Step>
-      <Step>
-        Enter your **Primer Nombre** (first name) and **Apellido** (last name).
-
-        <Frame>
-          ![2026 03 24 005393](/images/2026-03-24-005393.png)
-        </Frame>
-      </Step>
-      <Step>
-        Click **Siguiente**.
-      </Step>
-    </Steps>
-  </Accordion>
-
-  <Accordion title="Step 6 — Notification preferences">
-    <Steps>
-      <Step>
-        On the **Activar Notificaciones** screen, choose your preference:
-
-        - Click **Aceptar** to enable real-time alerts for orders and updates.
-        - Click **Cancelar** to skip for now.
-
-        <Frame>
-          ![2026 03 24 005394](/images/2026-03-24-005394.png)
-        </Frame>
-      </Step>
-      <Step>
-        You will be taken to your dashboard.
-      </Step>
-    </Steps>
+    <Tip>
+      RNDC timestamp logic uses the initial weighing timestamp as the primary reference, with the appointment timestamp as fallback — per the RNDC bulk cargo specification.
+    </Tip>
   </Accordion>
 </AccordionGroup>
 
 ---
 
-## Need Help?
+## How to Export from Buques
 
-If you have trouble signing in at any point, click **Contáctanos** on the login screen.
+<AccordionGroup>
+  <Accordion title="Step 1 — Open the Export Dialog (Step 1 of 3)">
+    Navigate to the **Buques** table using the sidebar, then click **Descargar**.
+  </Accordion>
+
+  <Accordion title="Step 2 — Select Format and Columns (Step 2 of 3)">
+    Choose Excel or CSV (RNDC formats are not available for Buques). Customize columns if needed — the default selection includes 7 columns across 3 groups.
+  </Accordion>
+
+  <Accordion title="Step 3 — Download or Send to Box (Step 3 of 3)">
+    Select your destination and submit. Files are named `{YYYY-MM-DD}-buques.{format}`.
+
+    - URL for downloads for Camiones table: [https://pmsa.app.box.com/folder/357307014621](https://pmsa.app.box.com/folder/357307014621)
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Frequently Asked Questions
+
+<AccordionGroup>
+  <Accordion title="What export formats are available?">
+    Excel (XLSX) and CSV are available for both Camiones and Buques. RNDC REIN1 and REIN2 are available for Camiones only.
+  </Accordion>
+
+  <Accordion title="Why can't I see the column selector?">
+    If you selected an RNDC format, the column selector is hidden because those columns are fixed by government specification and cannot be customized.
+  </Accordion>
+
+  <Accordion title="Why are some dates grayed out in the calendar?">
+    Future dates are automatically disabled to prevent selecting a range with no data.
+  </Accordion>
+
+  <Accordion title="Can I export to Box Drive more than once per day?">
+    Currently, Box Drive exports use a filename based on the date and table name. If you try to send a second file on the same day for the same table, it may fail due to a duplicate-name conflict. Use local download as an alternative.
+  </Accordion>
+
+  <Accordion title="Where does the Box Drive file go?">
+    Camiones and Buques exports are sent to separate, pre-configured Box folders. See your administrator for the exact folder paths.
+
+    URL for Camiones table downloads: [https://pmsa.app.box.com/folder/357306486195](https://pmsa.app.box.com/folder/357306486195)
+
+    URL for Buques table downloads: [https://pmsa.app.box.com/folder/357307014621](https://pmsa.app.box.com/folder/357307014621)
+  </Accordion>
+
+  <Accordion title="What date format is used in exported files?">
+    Exported files follow the Colombian convention: DD/MM/YYYY hh:mm AM/PM.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="My Box export failed with a duplicate file error">
+    This happens when you try to export to Box twice on the same day for the same table. The filename includes the current date, so a second export creates a name conflict. Use local download instead, or wait until the next day.
+  </Accordion>
+
+  <Accordion title="My export file is empty">
+    Make sure the selected date range contains data. If the range is empty, the system will show an error message before generating the file.
+  </Accordion>
+
+  <Accordion title="I don't see the Descargar button">
+    Verify that you have the correct role and permissions to access the export feature. Contact your administrator if the button is not visible.
+  </Accordion>
+
+  <Accordion title="The Box upload succeeded but I can't find the file">
+    Check the configured Box folder for your table (Camiones and Buques use separate folders). If you are unsure of the folder path, contact your administrator.
+  </Accordion>
+</AccordionGroup>
+
+#### Important Notes
+
+<Tip>
+  All exports run server-side and respect database-level access policies — file content never touches the client until download.
+</Tip>
+
+- RNDC REIN2 contains 9 fixed columns: Terminal NIT, transport company, vehicle plate, driver ID, manifest number, and offer timestamp.
+- RNDC REIN1 contains 16 fixed columns: all REIN2 columns plus entry/exit timestamps, weights, and scale IDs.
+- Exports include complete data for the selected range — there is no pagination cutoff.
+- The system handles null values and negative numbers (inventory adjustments) correctly.
+- Column selections reset each session — they are not persisted between visits.
