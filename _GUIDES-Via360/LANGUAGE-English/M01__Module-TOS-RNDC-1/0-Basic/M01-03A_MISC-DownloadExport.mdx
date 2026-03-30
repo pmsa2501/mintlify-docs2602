@@ -15,8 +15,8 @@ The export dialog includes date range filtering, customizable column selection w
 
 | Format | Purpose | Available For |
 | --- | --- | --- |
-| Excel (.XLSX) | Spreadsheet analysis, internal reporting | Camiones \+ Buques |
-| .CSV | Data import, third-party systems | Camiones \+ Buques |
+| Excel (.XLSX) | Spreadsheet analysis, internal reporting | Camiones + Buques |
+| .CSV | Data import, third-party systems | Camiones + Buques |
 | .CSV (RNDC REIN2) | Regulatory submission — appointment/shift assignment (9 fixed columns) | Camiones only |
 | .CSV (RNDC REIN1) | Regulatory submission — full entry/exit record (16 fixed columns) | Camiones only |
 
@@ -31,7 +31,6 @@ The export dialog includes date range filtering, customizable column selection w
 <AccordionGroup>
   <Accordion title="Step 1 — Open the Export Dialog (Step 1 of 7)">
     Navigate to the **Camiones** table using the sidebar, then click the **Descargar** button. A modal titled "Exportar Reporte" will appear.
-
     <Frame>
       ![2026 03 29 005636 1](/images/2026-03-29-005636-1.png)
     </Frame>
@@ -39,32 +38,26 @@ The export dialog includes date range filtering, customizable column selection w
 
   <Accordion title="Step 2 — Select a Date Range (Step 2 of 7)">
     Use the calendar to pick a start and end date. Future dates are automatically grayed out to prevent empty exports.
-
     <Frame>
       ![XX9 2026 03 29 005637](/images/_XX92026-03-29-005637.png)
     </Frame>
-
     <Tip>
       Pick a range with known data — for example, Jan 1–19, 2026 — to verify your first export.
     </Tip>
-
     <Note>
-      When selecting the start date, double-click on the desired day. This clears any previous date selection and sets a fresh starting point for your range
+      When selecting the start date, double-click on the desired day. This clears any previous date selection and sets a fresh starting point for your range.
     </Note>
   </Accordion>
 
   <Accordion title="Step 3 — Choose an Export Format (Step 3 of 7)">
     Select one of the four format options:
-
     - **Excel** — XLSX spreadsheet
     - **CSV** — comma-separated values
     - **RNDC REIN2** — 9 fixed regulatory columns
     - **RNDC REIN1** — 16 fixed regulatory columns
-
     <Frame>
       ![XX5 2026 03 29 005637 4](/images/_XX52026-03-29-005637-4.png)
     </Frame>
-
     <Note>
       When you select an RNDC format, the column selector disappears because those columns are fixed by government specification.
     </Note>
@@ -72,44 +65,34 @@ The export dialog includes date range filtering, customizable column selection w
 
   <Accordion title="Step 4 — Choose a Destination (Step 4 of 7)">
     Select where the file should be delivered:
-
     - **Box Drive** — uploads directly to the configured Box folder
     - **Descarga local** — standard browser download
-
     <Frame>
       ![XX6 2026 03 29 005637 5](/images/_XX62026-03-29-005637-5-1.png)
     </Frame>
-
     <Note>
-      Files exported to Box Drive are for internal use only. External users cannot access them unless an internal team member shares a direct link..
+      Files exported to Box Drive are for internal use only. External users cannot access them unless an internal team member shares a direct link.
     </Note>
   </Accordion>
 
   <Accordion title="Step 5 — Customize Columns (Step 5 of 7)">
     For Excel and CSV exports, expand the **Columnas** section to see grouped checkboxes. Each group has a toggle to select or deselect all columns in that category.
-
     The default selection includes 9 columns. Add or remove groups (e.g., toggle "Pesos" to include weight columns) as needed.
-
     <Frame>
       ![XX7 2026 03 29 005637 6](/images/_XX72026-03-29-005637-6.png)
     </Frame>
-
   </Accordion>
 
   <Accordion title="Step 6 — Submit the Export (Step 6 of 7)">
     Click the submit button. If you chose Box Drive, a toast notification confirms the upload. If you chose local download, the file downloads to your browser.
-
     <Frame>
       ![XX8 2026 03 29 005637 7](/images/_XX82026-03-29-005637-7.png)
     </Frame>
-
   </Accordion>
 
   <Accordion title="Step 7 — Verify the File (Step 7 of 7)">
     Check the downloaded or uploaded file. Files are named with a date prefix: `{YYYY-MM-DD}-camiones.{format}`.
-
-    - URL for downloads for Camiones table: [https://pmsa.app.box.com/folder/357306486195](https://pmsa.app.box.com/folder/357306486195)
-
+    - URL for downloads for Camiones table: [https://pmsa.app.box.com/folder/357306486195](https://pmsa.app.box.com/folder/357306486195)
     <Warning>
       Box Drive exports are currently limited to one file per day per table. If you need to re-export on the same day, use local download instead.
     </Warning>
@@ -131,9 +114,7 @@ The export dialog includes date range filtering, customizable column selection w
 
   <Accordion title="Step 3 — Download or Send to Box (Step 3 of 3)">
     Select your destination and submit. The file generates as a TAB-separated flat file ready for upload to the RNDC portal.
-
-    - URL for downloads for Camiones table: [https://pmsa.app.box.com/folder/357306486195](https://pmsa.app.box.com/folder/357306486195)
-
+    - URL for downloads for Camiones table: [https://pmsa.app.box.com/folder/357306486195](https://pmsa.app.box.com/folder/357306486195)
     <Tip>
       RNDC timestamp logic uses the initial weighing timestamp as the primary reference, with the appointment timestamp as fallback — per the RNDC bulk cargo specification.
     </Tip>
@@ -155,8 +136,7 @@ The export dialog includes date range filtering, customizable column selection w
 
   <Accordion title="Step 3 — Download or Send to Box (Step 3 of 3)">
     Select your destination and submit. Files are named `{YYYY-MM-DD}-buques.{format}`.
-
-    - URL for downloads for Camiones table: [https://pmsa.app.box.com/folder/357307014621](https://pmsa.app.box.com/folder/357307014621)
+    - URL for downloads for Buques table: [https://pmsa.app.box.com/folder/357307014621](https://pmsa.app.box.com/folder/357307014621)
   </Accordion>
 </AccordionGroup>
 
@@ -183,9 +163,7 @@ The export dialog includes date range filtering, customizable column selection w
 
   <Accordion title="Where does the Box Drive file go?">
     Camiones and Buques exports are sent to separate, pre-configured Box folders. See your administrator for the exact folder paths.
-
     URL for Camiones table downloads: [https://pmsa.app.box.com/folder/357306486195](https://pmsa.app.box.com/folder/357306486195)
-
     URL for Buques table downloads: [https://pmsa.app.box.com/folder/357307014621](https://pmsa.app.box.com/folder/357307014621)
   </Accordion>
 
