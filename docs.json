@@ -21,8 +21,9 @@
                 "group": "Basico",
                 "pages": [
                   "_GUIDES-Via360/LANGUAGE-Espanol/M01__Modulo-TOS-RNDC-1/0-Basico/M00-00_EmpezarAqui",
-                  "_GUIDES-Via360/LANGUAGE-Espanol/M01__Modulo-TOS-RNDC-1/0-Basico/M00-02_ajustes-perfil",
-                  "_GUIDES-Via360/LANGUAGE-Espanol/M01__Modulo-TOS-RNDC-1/0-Basico/M00-01_autentication"
+                  "_GUIDES-Via360/LANGUAGE-Espanol/M01__Modulo-TOS-RNDC-1/0-Basico/M00-01A_autentication",
+                  "_GUIDES-Via360/LANGUAGE-Espanol/M01__Modulo-TOS-RNDC-1/0-Basico/M00-02A_AJUSTES-perfil",
+                  "_GUIDES-Via360/LANGUAGE-Espanol/M01__Modulo-TOS-RNDC-1/0-Basico/M01-03A-MISC-DescargarExportar"
                 ]
               },
               {
@@ -31,8 +32,7 @@
                   "_GUIDES-Via360/LANGUAGE-Espanol/M01__Modulo-TOS-RNDC-1/1-Camiones/M01-01A_Formulario",
                   "_GUIDES-Via360/LANGUAGE-Espanol/M01__Modulo-TOS-RNDC-1/1-Camiones/M01-01B_Detalle-de-cargac",
                   "_GUIDES-Via360/LANGUAGE-Espanol/M01__Modulo-TOS-RNDC-1/1-Camiones/M01-01C-EstadoMachine",
-                  "_GUIDES-Via360/LANGUAGE-Espanol/M01__Modulo-TOS-RNDC-1/1-Camiones/M01-01D-Filtro",
-                  "_GUIDES-Via360/LANGUAGE-Espanol/M01__Modulo-TOS-RNDC-1/1-Camiones/M01-01E-Descargar"
+                  "_GUIDES-Via360/LANGUAGE-Espanol/M01__Modulo-TOS-RNDC-1/1-Camiones/M01-01D-Filtro"
                 ]
               },
               {
@@ -65,8 +65,9 @@
                 "group": "Basic",
                 "pages": [
                   "_GUIDES-Via360/LANGUAGE-English/M01__Module-TOS-RNDC-1/0-Basic/M00-00_GettingStarted",
-                  "_GUIDES-Via360/LANGUAGE-English/M01__Module-TOS-RNDC-1/0-Basic/M00-01_authentication",
-                  "_GUIDES-Via360/LANGUAGE-English/M01__Module-TOS-RNDC-1/0-Basic/M00-02_profile-settings"
+                  "_GUIDES-Via360/LANGUAGE-English/M01__Module-TOS-RNDC-1/0-Basic/M00-01A_AUTH",
+                  "_GUIDES-Via360/LANGUAGE-English/M01__Module-TOS-RNDC-1/0-Basic/M00-02A_SETTINGS-profile",
+                  "_GUIDES-Via360/LANGUAGE-English/M01__Module-TOS-RNDC-1/0-Basic/M01-03A_MISC-DownloadExport"
                 ]
               },
               {
@@ -75,8 +76,7 @@
                   "_GUIDES-Via360/LANGUAGE-English/M01__Module-TOS-RNDC-1/1-Camiones/M01-01B_Cargo-detail",
                   "_GUIDES-Via360/LANGUAGE-English/M01__Module-TOS-RNDC-1/1-Camiones/M01-01A_Form",
                   "_GUIDES-Via360/LANGUAGE-English/M01__Module-TOS-RNDC-1/1-Camiones/M01-01C-StadoMachine",
-                  "_GUIDES-Via360/LANGUAGE-English/M01__Module-TOS-RNDC-1/1-Camiones/M01-01D_Filter",
-                  "_GUIDES-Via360/LANGUAGE-English/M01__Module-TOS-RNDC-1/1-Camiones/M01-01E_Download"
+                  "_GUIDES-Via360/LANGUAGE-English/M01__Module-TOS-RNDC-1/1-Camiones/M01-01D_Filter"
                 ]
               },
               {
