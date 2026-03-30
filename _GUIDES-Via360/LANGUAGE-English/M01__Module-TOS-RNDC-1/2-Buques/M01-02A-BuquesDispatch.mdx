@@ -1,3 +1,131 @@
 ---
-title: "Dispatch"
+title: "Ship Dispatch"
+description: "Record outgoing cargo when a vessel departs by creating a Buque despachado entry in the Buques table."
 ---
+
+## Feature Overview
+
+Ship Dispatch lets authorized staff record when cargo leaves the port by ship. When cargo is loaded onto a vessel, the system creates a **Buque despachado** (Ship Dispatched) entry to track the outgoing inventory movement.
+
+<Note>
+  Only authorized users (typically Admin and Operator) can create Ship Dispatch entries. Client users can view the Buques table but cannot create new dispatches.
+</Note>
+
+---
+
+## How to Create a Ship Dispatch
+
+<AccordionGroup>
+  <Accordion title="Step 1 — Navigate to Buques">
+    From the main dashboard, click **Transporte** in the sidebar, then click **Buques**.
+
+    <Frame>
+      ![2026 03 30 005661](/images/2026-03-30-005661.png)
+    </Frame>
+
+    <Danger>
+      <b>PENDING</b>
+
+      Add real screenshot after app UI is finalized.
+    </Danger>
+  </Accordion>
+
+  <Accordion title="Step 2 — Open the Dispatch Dialog">
+    Click the blue **Generar carga** button in the toolbar above the table.
+
+    <Frame>
+      ![2026 03 30 005660](/images/2026-03-30-005660.png)
+    </Frame>
+
+    <Danger>
+      <b>PENDING</b>
+
+      Add real screenshot after app UI is finalized.
+    </Danger>
+  </Accordion>
+
+  <Accordion title="Step 3 — Select the Client">
+    Click the **Cliente** dropdown and select the client company whose cargo is being dispatched.
+  </Accordion>
+
+  <Accordion title="Step 4 — Select the Product">
+    Click the **Producto** dropdown and select the product being shipped.
+  </Accordion>
+
+  <Accordion title="Step 5 — Enter the Quantity">
+    In **Cantidad (kg)**, enter the cargo weight in kilograms.
+  </Accordion>
+
+  <Accordion title="Step 6 — Enter the Ship Name">
+    In **Motonave**, enter the vessel name.
+  </Accordion>
+
+  <Accordion title="Step 7 — Save the Dispatch">
+    Click **Guardar** to create the dispatch entry.
+
+    <Tip>
+      After you save, the dialog closes and the new entry appears in the table with the **Buque despachado** badge.
+    </Tip>
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## How to View Dispatch Details
+
+<AccordionGroup>
+  <Accordion title="Step 1 — Open the Row Menu">
+    Click the three-dot menu on the right side of the row.
+  </Accordion>
+
+  <Accordion title="Step 2 — Select Ver detalles">
+    Select **Ver detalles**.
+  </Accordion>
+
+  <Accordion title="Step 3 — Review the Details">
+    Review the information in the panel (currently read-only).
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Frequently Asked Questions
+
+<AccordionGroup>
+  <Accordion title="Why can't I create a dispatch?">
+    If you see an error when saving, your account may not have permission to create dispatches. Contact your supervisor or system administrator.
+  </Accordion>
+
+  <Accordion title="Can I edit a dispatch after creating it?">
+    The details panel is currently read-only. If you need to correct an entry, contact your system administrator.
+  </Accordion>
+
+  <Accordion title="What if I made a mistake in the quantity?">
+    Contact your system administrator to create an adjustment (Ajuste) entry to correct the inventory balance.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="I see 'No tiene acceso a las operaciones de PRC'">
+    Your role does not have permission to create dispatches. Contact your supervisor.
+  </Accordion>
+
+  <Accordion title="The form won't submit">
+    Make sure all required fields are filled: **Cliente**, **Producto**, **Cantidad**, **Motonave**.
+  </Accordion>
+
+  <Accordion title="My new entry doesn't appear">
+    Refresh the page. If it still doesn't appear, contact technical support.
+  </Accordion>
+</AccordionGroup>
+
+#### Important Notes
+
+- All four fields (Cliente, Producto, Cantidad, Motonave) are required.
+- Quantity must be a positive number in kilograms.
+- Use the official vessel name for Motonave.
+- Dispatch entries cannot be deleted through the interface; corrections must be made via adjustment entries.
