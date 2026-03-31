@@ -1,3 +1,201 @@
 ---
-title: "RNDC"
+title: "RNDC — Data Entry for Cargo Dispatch"
+description: "Enter manifest numbers, assign scales, and preview RNDC payloads for Colombian cargo dispatch compliance."
 ---
+
+## Feature Overview
+
+RNDC (Registro Nacional de Despacho de Carga) is Colombia's national cargo dispatch registry. When trucks transport cargo through the port, certain information must be reported to RNDC. MAM360 collects this information as part of the truck workflow — including manifest numbers, entry/exit scale assignments, and RNDC payload previews — so operators can verify data before submission.
+
+The system supports two RNDC report types: **RIEN2** (generated at Estado 7) and **RIEN1** (generated at Estado 8). Which reports apply depends on the product's RNDC code.
+
+<Note>Only users with the **Administrator** or **Operator** role can assign scales. Clients can view Carga details but cannot modify scale assignments.</Note>
+
+---
+
+## Key Concepts
+
+| Term | Meaning |
+|---|---|
+| **Manifest Number** | The 8-digit number from your transport manifest document, entered during Carga creation. |
+| **Bascula Entrada** | Entry scale — assigned when the truck reaches Estado 7 (entry weighing). |
+| **Bascula Salida** | Exit scale — assigned when the truck reaches Estado 8 (exit weighing). |
+| **RIEN2** | RNDC report generated at Estado 7 (Asignación de Cita). |
+| **RIEN1** | RNDC report generated at Estado 8 (Peso en Puerto). |
+| **RNDC Preview** | A modal that shows the payload and validation status before submission. |
+
+---
+
+## How to Do Most Common Tasks
+
+<Danger><b>PENDING</b> Update these images with actual app screenshots after bug fixes.</Danger>
+
+<AccordionGroup>
+  <Accordion title="How to enter the manifest number (during Carga creation)">
+    The manifest number is entered once during the Carga creation wizard. It cannot be changed after submission.
+
+    <Steps>
+      <Step>
+        Complete Steps 1–5 of the Carga wizard (client, product, transportadora, conductor, vehicle).
+      </Step>
+      <Step>
+        On **Step 6 (Documents)**, locate the field labeled **"Numero Manifiesto de Carga"**.
+      </Step>
+      <Step>
+        Enter the **8-digit manifest number** from your physical transport document. The field accepts digits only.
+      </Step>
+      <Step>
+        Click **Finalizar** to save the Carga. The manifest number is now stored with the transaction.
+      </Step>
+    </Steps>
+
+    <Warning>The manifest number must be exactly 8 digits (numbers only). It can only be entered during Carga creation — contact an administrator if you need to correct it after submission.</Warning>
+  </Accordion>
+
+  <Accordion title="How to assign the entry scale — Bascula Entrada (Estado 7)">
+    When a truck reaches Estado 7 (entry weighing), the entry scale dropdown becomes available.
+
+    <Steps>
+      <Step>
+        Open the Carga details by clicking on the row in the Camiones table.
+      </Step>
+      <Step>
+        Look for the **"PRC, Pesos"** section on the right side of the detail panel.
+      </Step>
+      <Step>
+        Select the appropriate scale from the **"Bascula Entrada"** dropdown.
+      </Step>
+      <Step>
+        The system automatically saves your selection. A success toast confirms: **"Bascula actualizada"**.
+      </Step>
+    </Steps>
+
+    <Tip>The Bascula Entrada dropdown only appears when the truck is at Estado 7 or above. If you do not see it, verify the truck's current estado.</Tip>
+  </Accordion>
+
+  <Accordion title="How to assign the exit scale — Bascula Salida (Estado 8)">
+    When the truck advances to Estado 8 (exit weighing), a second scale dropdown appears.
+
+    <Steps>
+      <Step>
+        Open the Carga details (same as before).
+      </Step>
+      <Step>
+        A second dropdown labeled **"Bascula Salida"** is now visible in the PRC, Pesos section.
+      </Step>
+      <Step>
+        Select the exit scale. The system automatically saves your selection.
+      </Step>
+    </Steps>
+
+    <Note>You can change the scale selection as long as the RNDC report has not been submitted yet.</Note>
+  </Accordion>
+
+  <Accordion title="How to preview the RNDC payload (optional)">
+    Use the preview to verify what data will be sent to RNDC before submission.
+
+    <Steps>
+      <Step>
+        Open the Carga details for a transaction at **Estado 7 or higher**.
+      </Step>
+      <Step>
+        Scroll to the bottom of the detail panel and click **"Preview RNDC Payload"**.
+      </Step>
+      <Step>
+        A modal opens showing:
+        - **Sistema Enturnamiento ID** — the product's RNDC code
+        - **Connection status** — whether the RNDC server is reachable
+        - **RIEN2 tab** (Estado 7 data) and **RIEN1 tab** (Estado 8 data)
+        - **Validation status** — highlights any missing required fields
+      </Step>
+      <Step>
+        Review the payload fields and validation messages. Close the modal when done.
+      </Step>
+    </Steps>
+
+    <Tip>Not all products require RNDC reporting. If both tabs are disabled and show "no aplica", the product does not have an RNDC code assigned. Contact the system administrator to verify the product configuration.</Tip>
+  </Accordion>
+
+  <Accordion title="How to export RNDC flat files (batch export)">
+    For batch RNDC submission, you can export all transactions as a flat file and upload it to the RNDC portal manually.
+
+    <Steps>
+      <Step>
+        From the **Camiones table**, click the **"Descargar"** button to open the Export modal.
+      </Step>
+      <Step>
+        Select a **date range** for the export.
+      </Step>
+      <Step>
+        Choose the format: **RNDC REIN2** (9 columns, Estado 7 data) or **RNDC REIN1** (16 columns, Estado 8 data).
+      </Step>
+      <Step>
+        Choose the destination: **Box Drive** (sent directly to your Box folder) or **Dispositivo local** (downloaded to your computer).
+      </Step>
+      <Step>
+        Click **"Enviar a Box"** or **"Descargar"** depending on your destination. A success toast confirms the export.
+      </Step>
+    </Steps>
+
+    <Note>Flat files are TAB-separated CSV files formatted per RNDC spec. The operator uploads these to the RNDC portal manually. Box Drive delivery requires OAuth authorization — contact your administrator if you see "Error al enviar a Box".</Note>
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## RNDC Product Codes Reference
+
+The following products have RNDC codes assigned. The code determines which RNDC reports (RIEN1, RIEN2) apply:
+
+
+
+| Code | Products | RIEN2 (Estado 7) | RIEN1 (Estado 8) |
+|---|---|---|---|
+| 430 | Carbón, Coke (CM01-CT04, CQ01-03) | Yes | Yes |
+| 1230 | Maíz (GR01) | Yes | No |
+| 1810 | Petcoke (PE01, PE02) | No | Yes |
+| 1910 | Vehículos (SU01) | Yes | Yes |
+
+---
+
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="I entered the wrong manifest number — can I change it?">
+    The manifest number can only be entered during Carga creation (Wizard Step 6). Contact an administrator if you need to correct it after submission.
+  </Accordion>
+  <Accordion title="The scale dropdown is grayed out or not visible">
+    Scale dropdowns only appear at the appropriate estado: Bascula Entrada at Estado 7+, Bascula Salida at Estado 8+. If visible but grayed out, you may not have permission — only Administrators and Operators can assign scales.
+  </Accordion>
+  <Accordion title="The RNDC preview shows 'No configurado'">
+    This means the product does not have a Sistema Enturnamiento ID (RNDC code) assigned. Both RIEN tabs will be disabled. Contact the system administrator to verify the product configuration.
+  </Accordion>
+  <Accordion title="The RNDC preview shows missing fields (Campos faltantes)">
+    Check that: (1) the manifest number was entered during Carga creation, and (2) scales have been assigned for the relevant estados. The validation message lists exactly which fields are missing.
+  </Accordion>
+  <Accordion title="The connectivity check fails or times out">
+    This means the RNDC server may be temporarily unavailable. The system still collects all data — it can be submitted when connectivity is restored. This is not a bug.
+  </Accordion>
+  <Accordion title="I get 'Error al enviar a Box' when exporting">
+    Box Drive delivery requires OAuth authorization. If your session is not authorized, the export will fail. Contact your administrator to set up Box Drive access, or use "Dispositivo local" to download the file directly.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Important Notes
+
+<Tip>Scale assignments can be changed at any time before the RNDC report is submitted. After submission, they are locked.</Tip>
+
+- RNDC data collection is **mandatory** for compliance with Colombian transport regulations.
+- The manifest number must match your physical transport document — validated as 8 digits only.
+- Only authorized port personnel (Administrator, Operator) can assign scales.
+- The system supports two output paths: **per-transaction preview** (JSON payload) and **batch flat file export** (TAB-separated CSV to Box Drive or local download).
+- Products without an RNDC code assigned will show "No configurado" in the preview — this is expected for non-RNDC products.
+
+---
+
+## Need Help?
+
+If you encounter an issue not covered here, contact the support team via email at **soporte-via360@puertodemamonal.com**.
