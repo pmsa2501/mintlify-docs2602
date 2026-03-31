@@ -1,3 +1,173 @@
 ---
-title: "PRC"
+title: "PRC — Truck Queue Management"
+description: "Manage the port truck queue by scheduling, dispatching, and cancelling trucks in Estados 2–4."
 ---
+
+## Feature Overview
+
+PRC (Punto de Recepción y Control) is the port's truck queue management screen. It covers trucks in **Estados 2–4** — from queue entry through scheduling to dispatch. Trucks that advance beyond Estado 4 or are cancelled leave the PRC view automatically.
+
+Authorized roles: **Administrator** and **PRC Operator**.
+
+<Note>Only users with the Administrator or PRC Operator role can schedule, dispatch, or cancel trucks. Read-only users can view the Turnos/TV display but cannot perform actions.</Note>
+
+---
+
+## Key Concepts
+
+| Term | Meaning |
+|---|---|
+| **Pila (Pile)** | A group of trucks sharing the same **Client + Product**. |
+| **T (Turno agendado)** | Estado 4 — scheduled, ready to dispatch. |
+| **P (Pre-turno)** | Estado 3 — arrived, needs scheduling. |
+| **L (Llegada)** | Estado 2 — entered the queue. |
+| **Turno number** | Auto-assigned when a truck enters the queue (Estado 2). Format: `CCC-PP##-####` (e.g. `PAC-GRCN-0001`). |
+
+---
+
+## How to Do Most Common Tasks
+
+<Danger><b>PENDING</b> Update these images with actual app screenshots after bug fixes.</Danger>
+
+<AccordionGroup>
+  <Accordion title="How to use Pilas (manage the queue)">
+    The **Pilas** view is the default PRC screen. Each row represents one pile (Client + Product).
+
+    <Steps>
+      <Step>
+        Navigate to **Transporte → PRC**. The Pilas view loads by default.
+      </Step>
+      <Step>
+        Each row is one pile. From here you can:
+        - Open pile details (click the arrow/chevron) to see individual trucks and their statuses
+        - **Schedule** a truck (Estado 3 → 4)
+        - **Dispatch** trucks (Estado 4 → 5)
+        - **Cancel** a truck (Estado 2/3/4 → 11)
+      </Step>
+    </Steps>
+  </Accordion>
+
+  <Accordion title="How to schedule an appointment (Estado 3 → Estado 4)">
+    Scheduling sets a date and time for a Pre-turno truck, moving it to Turno agendado.
+
+    <Steps>
+      <Step>
+        Open a pile's detail sheet by clicking the arrow/chevron on the pile row.
+      </Step>
+      <Step>
+        Find a truck in **Pre-turno (Estado 3)**.
+      </Step>
+      <Step>
+        Pick a **date + time**, then click **Agendar**.
+      </Step>
+      <Step>
+        The truck moves to **Turno agendado (Estado 4)** and becomes eligible for dispatch.
+      </Step>
+    </Steps>
+
+    <Tip>Only trucks in Estado 3 (Pre-turno) can be scheduled. If you don't see the scheduling option, confirm the truck's current state.</Tip>
+  </Accordion>
+
+  <Accordion title="How to dispatch trucks (Estado 4 → Estado 5)">
+    Dispatching moves scheduled trucks to the next stage (Estado 5 — port entrance). After dispatch, trucks disappear from PRC because PRC only shows Estados 2–4.
+
+    <Steps>
+      <Step>
+        In the Pilas view, find a pile where the **ENVIAR** badge shows a count.
+      </Step>
+      <Step>
+        Click **ENVIAR**.
+      </Step>
+      <Step>
+        Review the confirmation modal. It lists: **Placa** (plate), **Turno**, and **Fecha de cita** (appointment date).
+      </Step>
+      <Step>
+        Click **Continuar / Confirmar** to dispatch.
+      </Step>
+      <Step>
+        Confirm the success toast. Refresh the page if the truck is still visible.
+      </Step>
+    </Steps>
+
+    <Note>If the ENVIAR button is disabled, there are no Estado 4 trucks in that pile. Schedule a Pre-turno truck first.</Note>
+  </Accordion>
+
+  <Accordion title="How to cancel a truck (Estados 2/3/4 → Estado 11)">
+    Use cancel when a truck cannot proceed. Cancellation is permanent and cannot be undone.
+
+    <Steps>
+      <Step>
+        Open a pile's detail sheet.
+      </Step>
+      <Step>
+        Find a truck in **Estado 2, 3, or 4**.
+      </Step>
+      <Step>
+        Click **Cancelar** and accept the browser confirmation dialog.
+      </Step>
+    </Steps>
+
+    After cancellation:
+    - The truck becomes **Estado 11 (Cancelado)** and disappears from PRC.
+    - The cancellation record can be viewed in **Transporte → Camiones** under status "11. Cancelado".
+
+    <Warning>Cancellation is **permanent** — there is no undo. Make sure you are cancelling the correct truck.</Warning>
+  </Accordion>
+
+  <Accordion title="How to use the Turnos / TV display view (read-only)">
+    The Turnos view is a read-only, monitor-friendly display of the PRC queue.
+
+    <Steps>
+      <Step>
+        From the PRC screen, click the **Turnos** (TV) toggle.
+      </Step>
+      <Step>
+        View the cards grouped by pile (Client + Product). Each card shows: **Vehículo (placa)**, **Turno**, and **Turno agendado** (scheduled time).
+      </Step>
+      <Step>
+        Use the **search bar** to filter by client, product, plate, load number, driver, or turno number.
+      </Step>
+    </Steps>
+
+    <Note>The Turnos view is **read-only** — switch back to Pilas to manage trucks. The display does **not auto-refresh**; refresh the browser to see updates. Only trucks in Estados 2–4 appear.</Note>
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="I see 'No tienes permisos…' when I try to perform an action">
+    You are not logged in with an Administrator or PRC Operator role. Contact your system administrator to request the correct role assignment.
+  </Accordion>
+  <Accordion title="A truck is still visible after I dispatched or cancelled it">
+    The PRC view does not auto-refresh. Refresh the browser page (F5 or Cmd+R) to see the updated queue.
+  </Accordion>
+  <Accordion title="I cannot schedule a truck">
+    Only trucks in **Estado 3 (Pre-turno)** can be scheduled. Verify the truck's current state in the pile detail sheet. If it is in Estado 2, it has not yet advanced to Pre-turno.
+  </Accordion>
+  <Accordion title="The ENVIAR button is disabled / grayed out">
+    There are no Estado 4 (Turno agendado) trucks in that pile. You need to schedule at least one Pre-turno truck first before you can dispatch.
+  </Accordion>
+  <Accordion title="I cancelled a truck by mistake — can I undo it?">
+    No. Cancellation is permanent and sets the truck to Estado 11. The record is preserved in Transporte → Camiones for auditing but cannot be reverted.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Important Notes
+
+<Tip>The Turno number is assigned automatically when a truck enters the queue (Estado 2). You do not need to set it manually.</Tip>
+
+- PRC only shows trucks in **Estados 2, 3, and 4**. Trucks outside this range are managed in other modules.
+- Always refresh the page after performing dispatch or cancel actions to confirm the queue has updated.
+- The Turnos/TV view is intended for wall-mounted monitors or read-only supervision — all management actions happen in the Pilas view.
+- Cancelled trucks (Estado 11) can still be viewed in **Transporte → Camiones** for record-keeping.
+
+---
+
+## Need Help?
+
+If you encounter an issue not covered here, contact the support team via the **mam360-soporte** Slack channel.
